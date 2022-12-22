@@ -23,7 +23,7 @@ public class CharacterEncodingFilter implements Filter {
 //		response.setContentType("text/html; charset=UTF-8"); // 이 3개 코드를 필터에 쓰면 다른 서블릿엔 쓰지 않아도 된다.
 		
 		System.out.println("before filter");  // 서블릿 실행 전 실행됨
-		chain.doFilter(request, response);  // 다음 필터나 서블릿으로 흐름 넘김
+		chain.doFilter(request, response);  // 다음 필터나 서블릿으로 흐름 넘김, 필요에 따라 조건문 안에 넣을 수도 있음
 		System.out.println("after filter");  // 서블릿 실행 후 실행됨
 	}
 }

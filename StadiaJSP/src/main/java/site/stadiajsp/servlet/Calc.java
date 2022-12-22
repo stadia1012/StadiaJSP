@@ -36,7 +36,7 @@ public class Calc extends HttpServlet{
 		if ( op.equals("add") ) result = x+y;  // ==이 아닌 .equals()로 검사. 인스턴스 일치 여부가 아닌 값 비교.
 		if ( op.equals("substract") ) result = x-y;
 		
-		out.printf("결과는 %d입니다.", result );
+		out.printf("Result is %d", result );
 		
 	}
 }
