@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+div {
+	padding : 0;
+	margin : 0;
+}
+
+
+.lt {
+	text-decoration: none; color: #fff;
+    display : line-block;
+    margin : 10px;
+    padding: 8px;
+    text-align : center;
+    border : 2px solid #4e2fff;
+    background-color: #333;
+}
+
+.ld {
+	display : inline-block;
+	margin : 13px 10px 35px 10px;
+}
+
+body {
+    background-color: #fff;
+    margin : 0px;
+    padding: 0px;
+}
+
+#list {
+	padding : 30px 10px;
+}

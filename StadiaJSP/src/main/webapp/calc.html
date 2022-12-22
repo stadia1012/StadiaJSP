@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Stadia's Home</title>
+<!--  1개의 from에서 여러개의 submit 사용. name=value 로 전달됨. -->
 </head>
 <body>
 	<div>
@@ -14,8 +15,10 @@
 				<label>y:</label><input type="text" name="y" />
 			</div>
 			<div>
-				<input type="submit" name="operator" value="add" />
+				<input type="submit" name="operator" value="add" /> 
+				<!-- operator="add"로 전달됨 -->
 				<input type="submit" name="operator" value="substract" />
+				<!-- operator="substract"로 전달됨 -->
 			</div>
 		</form>
 	</div>

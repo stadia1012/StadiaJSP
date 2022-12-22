@@ -3,6 +3,7 @@ package site.stadiajsp.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,24 +19,33 @@ public class Calc2 extends HttpServlet{
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
+		ServletContext application = request.getServletContext();  // application 저장소
 		
 		
-		String x_ = request.getParameter("x");
-		String y_ = request.getParameter("y");
+		String num_ = request.getParameter("num");
 		String op = request.getParameter("operator");
 		
-		int x = 0;  // 기본값 지정
-		int y = 0;
+		int num = 0;
 		
-		if ( !x_.equals("") ) x = Integer.parseInt(x_);  // 빈문자열인지 검사. 빈문자일 경우 기본값임.
-		if ( !y_.equals("") ) y = Integer.parseInt(y_);
+		if ( !num_.equals("") ) num = Integer.parseInt(num_);  // 빈문자열인지 검사.
+
 		
-		
-		int result = 0;
-		
-		if ( op.equals("add") ) result = x+y;  // ==이 아닌 .equals()로 검사. 인스턴스 일치 여부가 아닌 값 비교.
-		if ( op.equals("substract") ) result = x-y;
-		
-		out.printf("Result is %d", result );
+		if(op.equals("=")) {  // "="이면 계산
+			int x = (Integer)application.getAttribute("number");  // 값을 Object로 반환하므로 강제 형변환
+			int y = num;
+			String operator = (String)application.getAttribute("operator");
+			
+			int result = 0;
+			if(operator.equals("+")) {
+				result = x+y;
+			} else {
+				result = x-y;
+			}
+			out.printf("Result is %d", result );
+			
+		} else {  // "="이 아닐 경우 값 저장
+			application.setAttribute("number", num);
+			application.setAttribute("operator", op);
+		}
 	}
 }
