@@ -37,6 +37,5 @@ public class Calc2 extends HttpServlet{
 		if ( op.equals("substract") ) result = x-y;
 		
 		out.printf("Result is %d", result );
-		
 	}
 }
