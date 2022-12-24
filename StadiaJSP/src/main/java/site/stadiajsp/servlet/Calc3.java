@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+// Session 객체를 이용한 값 저장
 
 @WebServlet("/calc3")
 public class Calc3 extends HttpServlet{
@@ -48,6 +49,7 @@ public class Calc3 extends HttpServlet{
 		} else {  // "="이 아닐 경우 값 저장
 			session.setAttribute("number", num);
 			session.setAttribute("operator", op);
+			out.println("뒤로가기를 눌러 계산을 계속해주세요.");
 		}
 	}
 }
