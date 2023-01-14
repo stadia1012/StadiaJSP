@@ -28,6 +28,7 @@ public class MultiHello extends HttpServlet{
 		
 		for (int i=0; i < cnt; i++) {
 			out.println( (i+1) + ": Hello! 안녕하세요! <br >");
+			// println인데 개행이 안되는 이유? -> html 코드를 보내는 것으로 html 코드가 개행됨
 		}
 		
 	}

@@ -20,7 +20,7 @@ public class Calc2 extends HttpServlet{
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		ServletContext application = request.getServletContext();  // ServletContext 저장소
+		ServletContext application = request.getServletContext();  // **ServletContext 저장소
 		
 		
 		String num_ = request.getParameter("num");
@@ -42,7 +42,7 @@ public class Calc2 extends HttpServlet{
 			} else {
 				result = x-y;
 			}
-			out.printf("Result is %d", result );
+			out.printf( "Result is %d", result );
 			
 		} else {  // "="이 아닐 경우 값 저장
 			application.setAttribute("number", num);

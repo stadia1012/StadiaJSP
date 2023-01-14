@@ -44,7 +44,7 @@ public class Calc3 extends HttpServlet{
 			} else {
 				result = x-y;
 			}
-			out.printf("Result is %d", result );
+			out.printf( "Result is %d", result );
 			
 		} else {  // "="이 아닐 경우 값 저장
 			session.setAttribute("number", num);
