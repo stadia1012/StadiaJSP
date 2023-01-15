@@ -13,8 +13,8 @@ import jakarta.servlet.http.HttpSession;
 
 // Session 객체를 이용한 값 저장
 
-@WebServlet("/calc4")
-public class Calc4 extends HttpServlet{
+@WebServlet("/calc5")
+public class Calc5 extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
