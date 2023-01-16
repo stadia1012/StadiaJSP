@@ -28,12 +28,6 @@ public class Calc5Post extends HttpServlet{
 		String operator = request.getParameter("operator");
 		String dot = request.getParameter("dot");
 		
-		if (operator != null && operator.equals("÷")) {
-			operator = "/";
-		} else if (operator != null && operator.equals("X")) {
-			operator = "*";
-		}
-		
 		String exp =""; 
 		if (cookies != null) {
 			for( Cookie c : cookies ) {
@@ -44,10 +38,20 @@ public class Calc5Post extends HttpServlet{
 			}
 		}
 		
+		if (operator != null && operator.equals("÷")) {
+			operator = "/";
+		} else if (operator != null && operator.equals("X")) {
+			operator = "*";
+		} else if (operator != null && operator.equals("BS")) {
+			exp = exp.substring(0, exp.length()-1 );
+			operator = "=";
+		}
+		
 		if(operator != null && operator.equals("=")) {  // = 연산자는 계산. 나머지는 누적
 			ScriptEngine engine = new ScriptEngineManager().getEngineByName("graal.js"); // js엔진 사용
 			try {
 				exp = String.valueOf( engine.eval(exp) );
+				if (exp.equals("null")) exp = "0";
 			} catch (ScriptException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
