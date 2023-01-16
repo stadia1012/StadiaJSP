@@ -17,6 +17,19 @@ import jakarta.servlet.http.HttpSession;
 public class Calc5 extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Cookie[] cookies = request.getCookies();
+		
+		String exp ="0";
+		if (cookies != null) {
+			for( Cookie c : cookies ) {
+				if(c.getName().equals("exp")) {
+					exp = c.getValue();
+					break;
+				}
+			}
+		}
+		
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
@@ -44,10 +57,10 @@ public class Calc5 extends HttpServlet{
 
 		out.write("</head>");
 		out.write("<body>");
-		out.write("	<form action=\"calc5\" method=\"post\">");
+		out.write("	<form action=\"calc5Post\" method=\"post\">");
 		out.write("		<table>");
 		out.write("			<tr>");
-		out.write("				<td class=\"output\" colspan=\"4\">0</td>");
+		out.printf("				<td class=\"output\" colspan=\"4\">%s</td>", exp);
 		out.write("			</tr>");
 		out.write("			<tr>");
 		out.write("				<td><input type=\"submit\" name=\"operator\" value=\"CE\" /></td>");
