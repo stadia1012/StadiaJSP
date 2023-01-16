@@ -4,7 +4,7 @@
   <artifactId>StadiaJSP</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <!-- 추가 start -->
+  <!-- 추가 start calc에서 JavaScript 엔진 이용-->
   <dependencies>
 	<dependency>
 	    <groupId>org.graalvm.js</groupId>
