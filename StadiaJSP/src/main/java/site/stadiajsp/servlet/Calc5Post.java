@@ -28,7 +28,7 @@ public class Calc5Post extends HttpServlet{
 		String operator = request.getParameter("operator");
 		String dot = request.getParameter("dot");
 		
-		String exp =""; 
+		String exp ="0"; 
 		if (cookies != null) {
 			for( Cookie c : cookies ) {
 				if(c.getName().equals("exp")) {
