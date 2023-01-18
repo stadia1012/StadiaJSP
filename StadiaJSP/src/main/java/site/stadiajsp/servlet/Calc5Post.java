@@ -63,6 +63,9 @@ public class Calc5Post extends HttpServlet{
 		}
 		
 		Cookie expCookie = new Cookie("exp", exp);
+		if(operator != null && operator.equals("C")) {  // 쿠키 삭제를 통한 계산기 값 초기화
+			expCookie.setMaxAge(0);
+		}
 		response.addCookie(expCookie);
 		response.sendRedirect("calc5");
 	}
