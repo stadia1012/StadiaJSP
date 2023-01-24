@@ -14,15 +14,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
-// Session 객체를 이용한 값 저장
+// Calc5.java와 Calc5Post.java 2개로 나뉘었던 파일을, 하나의 파일 안에서 doGet과 doPost 함수로 나눠서 통합.
+// + 초기값 0에서 숫자 입력시 앞에 0 표시되는 것 수정
 
 @WebServlet("/calculator")
 public class Calculator extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-Cookie[] cookies = request.getCookies();
+		Cookie[] cookies = request.getCookies();
 		
 		String exp ="0";
 		if (cookies != null) {
@@ -139,9 +139,13 @@ Cookie[] cookies = request.getCookies();
 				e.printStackTrace();
 			}
 		} else {
-			exp += (value == null)?"":value;
-			exp += (operator == null)?"":operator;
-			exp += (dot == null)?"":operator;
+			if (exp != null && exp.equals("0") && value != null ) {  // 누적하기 전, exp가 0이면 value로 대체.
+				exp = value;
+			} else {
+				exp += (value == null)?"":value;
+				exp += (operator == null)?"":operator;
+				exp += (dot == null)?"":operator;
+			}
 		}
 		
 		Cookie expCookie = new Cookie("exp", exp);
