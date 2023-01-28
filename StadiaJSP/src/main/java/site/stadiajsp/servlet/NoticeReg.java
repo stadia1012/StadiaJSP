@@ -23,7 +23,9 @@ public class NoticeReg extends HttpServlet{
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		
+		out.write("Title: ");
 		out.println(title);
+		out.write("<br>Content: ");
 		out.println(content);
 		
 	}
