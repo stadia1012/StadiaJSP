@@ -2,18 +2,18 @@
     pageEncoding="UTF-8"%>
 <%
 	// Controller와 view가 분리된 MVC model 1
+	// newLecture 님의 강의에 "값을 입력하세요." 메시지를 추가함
 	int num = 0;
+	String result;
+	
 	String num_ = request.getParameter("n");
 	if(num_ != null && !num_.equals("")) {
 		num = Integer.parseInt(num_);
+		result = (num%2 != 0)?"odd":"even";
+	} else {
+		result = "Please enter a value.";
 	}
 	
-	String result;
-	if(num%2 != 0) {
-		result = "홀수입니다.";
-	} else {
-		result = "짝수입니다.";
-	}
 %>
 <!--  ----------------------------------------------------------------------- -->
 <!DOCTYPE html>
@@ -28,7 +28,7 @@
 			<input type="text" name="n" />
 			<input type="submit" value="submit" />
 		</form>
-		결과 : <%=result%>
+		Result : <%=result%>
 	</div>
 </body>
 </html>

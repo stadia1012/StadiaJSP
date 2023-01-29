@@ -13,7 +13,7 @@
 			<input type="text" name="n" />
 			<input type="submit" value="submit" />
 		</form>
-		결과 : <%=request.getAttribute("result")%>
+		Result : <%=request.getAttribute("result")%>
 		<!-- "result"로 보냈으니 "result"로 받기 -->
 	</div>
 </body>

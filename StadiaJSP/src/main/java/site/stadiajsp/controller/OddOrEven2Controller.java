@@ -1,4 +1,4 @@
-package site.stadiajsp.servlet;
+package site.stadiajsp.controller;
 
 import java.io.IOException;
 
@@ -14,16 +14,14 @@ public class OddOrEven2Controller extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int num = 0;
+		String result;
+		
 		String num_ = request.getParameter("n");
 		if(num_ != null && !num_.equals("")) {
 			num = Integer.parseInt(num_);
-		}
-		
-		String result;
-		if(num%2 != 0) {
-			result = "홀수입니다.";
+			result = (num%2 != 0)?"odd":"even";
 		} else {
-			result = "짝수입니다.";
+			result = "Please enter a value.";
 		}
 		
 		request.setAttribute("result", result);  // "result"로 보내기
