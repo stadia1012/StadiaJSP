@@ -104,7 +104,7 @@ public class Calculator extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-Cookie[] cookies = request.getCookies();
+		Cookie[] cookies = request.getCookies();
 		
 		String value = request.getParameter("value");
 		String operator = request.getParameter("operator");

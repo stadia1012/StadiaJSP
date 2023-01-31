@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.List" %> <!-- list 사용을 위한 import -->
+<!-- list, map 사용을 위한 import -->
+<%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
 <!DOCTYPE html>
 <html>
