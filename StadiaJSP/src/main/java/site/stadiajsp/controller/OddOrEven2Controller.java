@@ -21,7 +21,7 @@ public class OddOrEven2Controller extends HttpServlet{
 			num = Integer.parseInt(num_);
 			result = (num%2 != 0)?"odd":"even";
 		} else {
-			result = "Please enter a value.";
+			result = "Please enter a number.";
 		}
 		
 		request.setAttribute("result", result);  // "result"로 보내기

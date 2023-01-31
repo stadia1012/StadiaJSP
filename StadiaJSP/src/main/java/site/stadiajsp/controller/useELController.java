@@ -22,14 +22,16 @@ public class useELController extends HttpServlet{
 		array1.add("Black");
 		array1.add("Red");
 		
+		String[] names = {"stadia", "james"};
 		
 		HashMap<String,Object> map1 = new HashMap<String, Object>();
-		map1.put("name", "Stadia");
+		map1.put("name", "stadia");
 		map1.put("email", "stadia@gmail.com");
 		
 		
 		request.setAttribute("number", num);
 		request.setAttribute("arrayList", array1);
+		request.setAttribute("array", names);
 		request.setAttribute("map1", map1);
 		
 		
