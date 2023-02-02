@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.container p {
+    font-size: 2em;
+    font-weight: 800;
+    text-align: center;
+    color: rgb(14, 0, 141);
+}
