@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Stadia's Home</title>
+	<link rel= "stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<section class="section section1">
+			<div class="contents ">
+				<p class="main-title">스크롤 이벤트 예제</p>
+				<p class="subtext">테스트 페이지입니다. 테스트 페이지입니다. 테스트 페이지입니다.</p>
+				<p class="subtext">테스트 페이지입니다. 테스트 페이지입니다.</p>
+			</div>
+		</section>
+		<section class="section section2">
+		</section>
+		<section class="section section3">
+		</section>
+	</div>
+</body>
+
+<script src="/js/gsap-public/minified/gsap.min.js"></script>
+<script src="/js/gsap-public/minified/scrollTrigger.min.js"></script>
+
+<script>
+	gsap.from(".main-title", {
+		duration: 0.8,
+		opacity: 0,
+		y: 60
+	});
+	gsap.from(".subtext", {
+		delay: 0.1,
+		duration: 0.8,
+		opacity: 0,
+		y: 60
+	});
+	
+	gsap.from(".fade-in-5", {
+		duration: 0.5,
+		opacity: 0.2,
+	});
+</script>
+<script>
+	let aElSection = document.querySelectorAll(".main > section");
+	let curSIdx = 0;
+
+	let wheelTimer;
+	window.addEventListener("wheel", function(e) {
+		clearTimeout(wheelTimer);
+		wheelTimer = setTimeout(function() {
+			if(e.deltaY < 0) {
+				doScroll(++curSIdx);
+			} else {
+				doScroll(--curSIdx);
+			}
+		}, 50);
+	});
+
+	function doScroll(sidx) {
+		console.log(sidx);
+		sidx = sidx < 0 ? 0 : sidx;
+		sidx = sidx > aElSection.length - 1 ? aElSection.length - 1 : sidx;
+			
+		curSIdx = sidx;
+
+		aElSection[curSIdx].scrollIntoView({
+			block: "start", inline: "start", behavior: "smooth"
+		});  	
+	}
+</script>
+
+</html>

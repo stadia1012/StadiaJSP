@@ -1,0 +1,6 @@
+/minified/ - the files you'd load into a web page because they're universally compatible and highly compressed for maximum load speed
+/umd/ - uncompressed versions of the minified files, in UMD format (highly compatible). Typically these are used for older build tools or for debugging (because the source code is human-readable)
+/esm/ - ES Module files, transpiled down to be compatible with virtually all modern build tools (no fancy ES6 stuff)
+/src/ - the raw source code files which are modern ES6 modules
+
+They're all the same GSAP, just in different formats to serve the varying needs of the community. Pick the one that fits with your workflow best. When in doubt, just use the minified files. 
