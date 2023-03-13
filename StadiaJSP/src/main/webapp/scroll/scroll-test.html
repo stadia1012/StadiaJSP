@@ -5,45 +5,91 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Stadia's Home</title>
 	<link rel= "stylesheet" href="./style.css" type="text/css">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
 	<div class="main">
 		<section class="section section1">
-			<div class="contents ">
-				<p class="main-title">스크롤 이벤트 예제</p>
-				<p class="subtext">테스트 페이지입니다. 테스트 페이지입니다. 테스트 페이지입니다.</p>
-				<p class="subtext">테스트 페이지입니다. 테스트 페이지입니다.</p>
+			<div class="contents s1-content">
+				<p class="main-title s1-title">스크롤 이벤트 예제</p>
+				<p class="subtext s1-subtext">테스트 페이지입니다. 테스트 페이지입니다. 테스트 페이지입니다.</p>
+				<p class="subtext s1-subtext">테스트 페이지입니다. 테스트 페이지입니다.</p>
 			</div>
 		</section>
 		<section class="section section2">
+			<div class="contents s2-content">
+				<p class="main-title s2-title">두번째 Section입니다.</p>
+				<p class="subtext s2-subtext">테스트 페이지입니다. 테스트 페이지입니다. 테스트 페이지입니다.</p>
+				<p class="subtext s2-subtext">테스트 페이지입니다. 테스트 페이지입니다.</p>
+			</div>
 		</section>
 		<section class="section section3">
+			<div class="contents s3-content">
+				<p class="main-title s3-title">두번째 Section입니다.</p>
+				<p class="subtext s3-subtext">테스트 페이지입니다. 테스트 페이지입니다. 테스트 페이지입니다.</p>
+				<p class="subtext s3-subtext">테스트 페이지입니다. 테스트 페이지입니다.</p>
+			</div>
 		</section>
 	</div>
 </body>
 
 <script src="/js/gsap-public/minified/gsap.min.js"></script>
-<script src="/js/gsap-public/minified/scrollTrigger.min.js"></script>
+<script src="/js/gsap-public/minified/ScrollTrigger.min.js"></script>
 
 <script>
-	gsap.from(".main-title", {
+	gsap.registerPlugin(ScrollTrigger);
+
+	gsap.from(".s1-title", {
+		delay: 0.1,
+		scrollTrigger: {
+			trigger: ".s1-title",
+			toggleActions: "restart none restart none"
+			/*onEnter, onLeave, onEnterBack, onLeaveBack*/
+		},
 		duration: 0.8,
 		opacity: 0,
-		y: 60
+		y: 60,
 	});
-	gsap.from(".subtext", {
+	gsap.from(".s2-title", {
+		delay: 0.1,
+		scrollTrigger: {
+			trigger: ".s2-title",
+			toggleActions: "restart none restart none"
+		},
+		duration: 0.8,
+		opacity: 0,
+		y: 60,
+	});
+	gsap.from(".s1-subtext", {
+		delay: 0.1,
+		scrollTrigger: {
+			trigger: ".s1-title",
+			toggleActions: "restart none restart none"
+		},
 		delay: 0.1,
 		duration: 0.8,
 		opacity: 0,
-		y: 60
+		y: 60,
 	});
-	
+	gsap.from(".s2-subtext", {
+		delay: 0.1,
+		scrollTrigger: {
+			trigger: ".s2-title",
+			toggleActions: "restart none restart none"
+		},
+		delay: 0.1,
+		duration: 0.8,
+		opacity: 0,
+		y: 60,
+	});
 	gsap.from(".fade-in-5", {
 		duration: 0.5,
 		opacity: 0.2,
 	});
 </script>
-<script>
+
+
+<!--script>
 	let aElSection = document.querySelectorAll(".main > section");
 	let curSIdx = 0;
 
@@ -70,6 +116,26 @@
 			block: "start", inline: "start", behavior: "smooth"
 		});  	
 	}
+</script-->
+
+<!--section 단위 scroll-->
+<script>
+	var mHtml = $("html");
+	var page = 1;
+	mHtml.animate({scrollTop : 0},10);
+	$(window).on("wheel", function(e) {
+    if(mHtml.is(":animated")) return;
+    if(e.originalEvent.deltaY > 0) {
+        if(page == 4) return;
+        page++;
+    } else if(e.originalEvent.deltaY < 0) {
+        if(page == 1) return;
+        page--;
+    }
+    var posTop =(page-1) * $(window).height();
+    mHtml.animate({scrollTop : posTop});
+})
+
 </script>
 
 </html>
