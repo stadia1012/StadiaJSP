@@ -2,17 +2,17 @@
 
 /*font*/
 @font-face {
-    font-family: 'o_dl';
-    src:
-         url('../fonts/Duolac_L_Org.woff') format('woff');
+    font-family: 'dl';
+    /*src: url('../fonts/DuolacL_W.eot');*/
+    src: url('../fonts/DuolacL_W.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'o_dm';
-    src:
-         url('../fonts/Duolac_M_Org.woff') format('woff');
+    font-family: 'dm';
+    /*src: url('../fonts/DuolacM_W.eot');*/
+    src: url('../fonts/DuolacM_W.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -29,7 +29,8 @@ section { position: relative}
 .s3-content { left: 50%; top: 30%; transform: translate(-50%, -30%)}
 
 .contents .main-title {
-    font-size: 38px;
+    font-family: dl;
+    font-size: 42px;
     font-weight: 700;
     text-align: center;
     color: rgb(25, 15, 117);
@@ -39,6 +40,7 @@ section { position: relative}
 .contents .s2-title {color: rgb(255, 255, 255);}
 
 .contents .subtext {
+    font-family: dl;
     font-size: 20px;
     font-weight: 400;
     text-align: center;
