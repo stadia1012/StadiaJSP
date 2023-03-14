@@ -10,13 +10,19 @@
 <body>
 	<div class="main">
 		<section class="section section1">
+			<div class="video-wrap">
+				<video class="bg-video" src="/scroll/video/Dual_Coating_Video.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
+			</div>
 			<div class="contents s1-content">
-				<p class="main-title s1-title">스크롤 이벤트 예제</p>
-				<p class="subtext s1-subtext">테스트 페이지입니다. 테스트 페이지입니다. 테스트 페이지입니다.</p>
-				<p class="subtext s1-subtext">테스트 페이지입니다. 테스트 페이지입니다.</p>
+				<p class="main-title s1-title">배경 영상 삽입</p>
+				<p class="subtext s1-subtext">자연 이미지, 제품 공정 영상 등을 넣기도 하며.</p>
+				<p class="subtext s1-subtext">기업 문화 영상을 넣기도 합니다.</p>
 			</div>
 		</section>
 		<section class="section section2">
+			<div class="video-wrap">
+				<video class="bg-video" src="/scroll/video/main-nature-sample-min.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
+			</div>
 			<div class="contents s2-content">
 				<p class="main-title s2-title">두번째 Section입니다.</p>
 				<p class="subtext s2-subtext">테스트 페이지입니다. 테스트 페이지입니다. 테스트 페이지입니다.</p>
@@ -25,7 +31,7 @@
 		</section>
 		<section class="section section3">
 			<div class="contents s3-content">
-				<p class="main-title s3-title">두번째 Section입니다.</p>
+				<p class="main-title s3-title">세번째 Section입니다.</p>
 				<p class="subtext s3-subtext">테스트 페이지입니다. 테스트 페이지입니다. 테스트 페이지입니다.</p>
 				<p class="subtext s3-subtext">테스트 페이지입니다. 테스트 페이지입니다.</p>
 			</div>
@@ -40,47 +46,47 @@
 	gsap.registerPlugin(ScrollTrigger);
 
 	gsap.from(".s1-title", {
-		delay: 0.1,
+		delay: 0.4,
 		scrollTrigger: {
-			trigger: ".s1-title",
-			toggleActions: "restart none restart none"
+			trigger: ".s1-title", toggleActions: "restart none restart none"
 			/*onEnter, onLeave, onEnterBack, onLeaveBack*/
 		},
-		duration: 0.8,
-		opacity: 0,
-		y: 60,
+		duration: 0.8, opacity: 0, y: 60,
 	});
 	gsap.from(".s2-title", {
 		delay: 0.1,
 		scrollTrigger: {
-			trigger: ".s2-title",
-			toggleActions: "restart none restart none"
+			trigger: ".s2-title", toggleActions: "restart none restart none"
 		},
-		duration: 0.8,
-		opacity: 0,
-		y: 60,
+		duration: 0.8, opacity: 0, y: 60,
 	});
-	gsap.from(".s1-subtext", {
+	gsap.from(".s3-title", {
 		delay: 0.1,
 		scrollTrigger: {
-			trigger: ".s1-title",
-			toggleActions: "restart none restart none"
+			trigger: ".s3-title", toggleActions: "restart none restart none"
 		},
-		delay: 0.1,
-		duration: 0.8,
-		opacity: 0,
-		y: 60,
+		duration: 0.8, opacity: 0, y: 60,
+	});
+	gsap.from(".s1-subtext", {
+		delay: 0.5,
+		scrollTrigger: {
+			trigger: ".s1-title", toggleActions: "restart none restart none"
+		},
+		delay: 0.1, duration: 0.8, opacity: 0, y: 60,
 	});
 	gsap.from(".s2-subtext", {
 		delay: 0.1,
 		scrollTrigger: {
-			trigger: ".s2-title",
-			toggleActions: "restart none restart none"
+			trigger: ".s2-title", toggleActions: "restart none restart none"
 		},
+		delay: 0.1, duration: 0.8, opacity: 0, y: 60,
+	});
+	gsap.from(".s3-subtext", {
 		delay: 0.1,
-		duration: 0.8,
-		opacity: 0,
-		y: 60,
+		scrollTrigger: {
+			trigger: ".s3-title", toggleActions: "restart none restart none"
+		},
+		delay: 0.1, duration: 0.8, opacity: 0, y: 60,
 	});
 	gsap.from(".fade-in-5", {
 		duration: 0.5,
