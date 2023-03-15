@@ -17,10 +17,17 @@
     font-style: normal;
 }
 
-
 html, body, section, div, p, h1, h2, h3, h4, video { padding: 0; margin: 0;}
-body {margin: 0 !important; overflow: hidden;}
-section { position: relative}
+body {margin: 0 !important;}
+
+/*스크롤바 숨기기*/
+.none-scroll::-webkit-scrollbar {
+  display: none;
+}
+.none-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 .contents { position: absolute; left : 50%; transform: translate(-50%, 0);}
 
@@ -30,7 +37,7 @@ section { position: relative}
 
 .contents .main-title {
     font-family: dl;
-    font-size: 42px;
+    font-size: 46px;
     font-weight: 700;
     text-align: center;
     color: rgb(25, 15, 117);
@@ -47,7 +54,7 @@ section { position: relative}
     color: rgb(255, 255, 255);
 }
 
-.main-scroll-move {
+.scroll-btn {
     position: absolute;
     left: 50%;
     bottom: 33px;
@@ -60,7 +67,7 @@ section { position: relative}
 .video-wrap { position: absolute; top: 0; left: 0; height: 100%; width: 100% }
 .bg-video {position: absolute; width: 100%; height: 100%; left: 50%; transform: translateX(-50%); object-fit: cover;}
 
-.section { height: 100vh; }
+.section { height: 100vh !important; position: relative }
 .section1 { background-color: rgba(136, 136, 136, 0.178)}
 .section2 { background-color: rgba(150, 150, 150, 0.178)}
 .section3 { background-color: rgb(130, 163, 255)}

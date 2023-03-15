@@ -6,32 +6,51 @@
 	<title>Stadia's Home</title>
 	<link rel= "stylesheet" href="./style.css" type="text/css">
 	<link rel="stylesheet" href="/scroll/css/motion.css">
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="/js/jquery-3.6.4.min.js"></script>
+	<script src="/js/jquery.scrollify.js"></script>
+	<script type="text/javascript">
+        $(function() {
+        	$.scrollify({
+            	section : ".scroll-section",
+            	//interstitialSection:".header, .footer",
+            	//scrollSpeed: 500,
+          	});
+		  	$(".scroll-down").click(function(e) {
+    			e.preventDefault();
+    			$.scrollify.next();
+  			});
+			  $(".scroll-top").click(function(e) {
+    			e.preventDefault();
+    			$.scrollify.move("#section1");
+  			});
+        });
+    </script>
 </head>
-<body>
-	<div class="main">
-		<section class="section section1">
+<body class="none-scroll">
+	<div>
+		<section id="section1" class="section section1 scroll-section">
 			<div class="video-wrap">
 				<video class="bg-video" src="/scroll/video/Dual_Coating_Video.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
 			</div>
 			<div class="contents s1-content">
-				<p class="main-title s1-title">장 끝까지 살아가는 듀얼코팅 유산균</p>
+				<p class="main-title s1-title">우리는 유산균을 연구합니다.</p>
 				<p class="subtext s1-subtext">영상 삽입#1 - 자연 이미지, 제품 공정 영상 등을 넣기도 하며.</p>
 				<p class="subtext s1-subtext">기업 문화 영상을 넣기도 합니다.</p>
 			</div>
-			<p class="main-scroll-move heartbeat"><a href="#section2"><img src="/scroll/img/scroll_a.png"></a></p>
+			<p class="scroll-btn heartbeat"><a class="scroll-down" href="#section2"><img src="/scroll/img/scroll_a.png"></a></p>
 		</section>
-		<section id="section2" class="section section2">
+		<section id="section2" class="section section2 scroll-section">
 			<div class="video-wrap">
 				<video class="bg-video" src="/scroll/video/main-nature-sample-min.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
 			</div>
 			<div class="contents s2-content">
-				<p class="main-title s2-title">영상 삽입2 - 따뜻한 기업 이미지</p>
-				<p class="subtext s2-subtext">전 세계적으로 ESG 경영의 중요성이 강조되는 가운데,</p>
+				<p class="main-title s2-title">지구를 생각합니다.<br>쎌바이오텍의 ESG 이야기</p>
+				<p class="subtext s2-subtext">영상 삽입#2 전 세계적으로 ESG 경영의 중요성이 강조되는 가운데,</p>
 				<p class="subtext s2-subtext">자연 느낌의 영상도 많이 사용되고 있습니다.</p>
 			</div>
+			<p class="scroll-btn heartbeat"><a class="scroll-down" href="#section3"><img src="/scroll/img/scroll_a.png"></a></p>
 		</section>
-		<section id="section3" class="section section3">
+		<section id="section3" class="section section3 scroll-section">
 			<div class="contents s3-content">
 				<p class="main-title s3-title">예시 텍스트</p>
 				<p class="subtext s3-subtext"></p>
@@ -56,14 +75,14 @@
 		duration: 0.8, opacity: 0, y: 60,
 	});
 	gsap.from(".s2-title", {
-		delay: 0.1,
+		delay: 0.2,
 		scrollTrigger: {
-			trigger: ".s2-title", toggleActions: "restart none restart none"
+			trigger: ".s2-title", toggleActions: "restart none restart none",
 		},
 		duration: 0.8, opacity: 0, y: 60,
 	});
 	gsap.from(".s3-title", {
-		delay: 0.1,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: ".s3-title", toggleActions: "restart none restart none"
 		},
@@ -77,14 +96,14 @@
 		duration: 0.8, opacity: 0, y: 60,
 	});
 	gsap.from(".s2-subtext", {
-		delay: 0.1,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: ".s2-title", toggleActions: "restart none restart none"
 		},
-		delay: 0.1, duration: 0.8, opacity: 0, y: 60,
+		duration: 0.8, opacity: 0, y: 60,
 	});
 	gsap.from(".s3-subtext", {
-		delay: 0.1,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: ".s3-title", toggleActions: "restart none restart none"
 		},
@@ -96,38 +115,7 @@
 	});
 </script>
 
-
-<!--script>
-	let aElSection = document.querySelectorAll(".main > section");
-	let curSIdx = 0;
-
-	let wheelTimer;
-	window.addEventListener("wheel", function(e) {
-		clearTimeout(wheelTimer);
-		wheelTimer = setTimeout(function() {
-			if(e.deltaY < 0) {
-				doScroll(++curSIdx);
-			} else {
-				doScroll(--curSIdx);
-			}
-		}, 50);
-	});
-
-	function doScroll(sidx) {
-		console.log(sidx);
-		sidx = sidx < 0 ? 0 : sidx;
-		sidx = sidx > aElSection.length - 1 ? aElSection.length - 1 : sidx;
-			
-		curSIdx = sidx;
-
-		aElSection[curSIdx].scrollIntoView({
-			block: "start", inline: "start", behavior: "smooth"
-		});  	
-	}
-</script-->
-
-<!--section 단위 scroll-->
-<script>
+<!--section 단위 스크롤 바닐라 js script>
 	var mHtml = $("html");
 	var page = 1;
 	mHtml.animate({scrollTop : 0},10);
@@ -143,7 +131,16 @@
     var posTop =(page-1) * $(window).height();
     mHtml.animate({scrollTop : posTop});
 })
+</script-->
 
+<script>
+	$('scoll-a1').click(function () {
+	  $('html, body').animate({
+		scrollTop: $($.attr(this, 'href')).offset().top
+	  }, 500);
+	  return false;
+	});
 </script>
+
 
 </html>
