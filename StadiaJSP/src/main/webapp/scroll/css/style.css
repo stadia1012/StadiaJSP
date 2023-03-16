@@ -3,16 +3,16 @@
 /*font*/
 @font-face {
     font-family: 'dl';
-    /*src: url('../fonts/DuolacL_W.eot');*/
-    src: url('../fonts/DuolacL_W.woff') format('woff');
+    /*src: url('/fonts/DuolacL_W.eot');*/
+    src: url('/fonts/DuolacL_W.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'dm';
-    /*src: url('../fonts/DuolacM_W.eot');*/
-    src: url('../fonts/DuolacM_W.woff') format('woff');
+    /*src: url('/fonts/DuolacM_W.eot');*/
+    src: url('/fonts/DuolacM_W.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -70,4 +70,4 @@ body {margin: 0 !important;}
 .section { height: 100vh !important; position: relative }
 .section1 { background-color: rgba(136, 136, 136, 0.178)}
 .section2 { background-color: rgba(150, 150, 150, 0.178)}
-.section3 { background-color: rgb(130, 163, 255)}
+.section3 { background-color: rgb(255, 255, 255)}

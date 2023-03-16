@@ -3222,6 +3222,36 @@ Copyright (c) 2015-2016 Petr Pavlyuk
         -webkit-transform: translateY(-20px);
     }
 }
+/*float2 추가*/
+.float2
+{
+    -webkit-animation: float2 1.6s;
+            animation: float2 1.6s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+@keyframes float2
+{
+    0%, 100%
+    {
+        transform: translateY(0);
+    }
+    50%
+    {
+        transform: translateY(-13px);
+    }
+}
+@-webkit-keyframes float2
+{
+    0%, 100%
+    {
+        -webkit-transform: translateY(0);
+    }
+    50%
+    {
+        -webkit-transform: translateY(-13px);
+    }
+}
 /*orbit*/
 .orbit
 {
