@@ -28,9 +28,9 @@ body {margin: 0 !important;}
   scrollbar-width: none;
 }*/
 
-.s1-content { left: 50%; top: 300px; transform: translate(-50%, 0)}
-.s2-content { left: 50%; top: 30%; transform: translate(-50%, -30%)}
-.s3-content { margin: 0 auto;}
+.s1-content { margin: 30px auto 0; }
+.s2-content { margin: 30px auto 0; }
+.s3-content { margin: 30px auto 0; }
 
 .contents .main-title {
     font-family: dl;

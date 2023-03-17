@@ -13,7 +13,7 @@
         $(function() {
         	$.scrollify({
             	section : ".scroll-section",
-            	 scrollbars: false,
+            	 scrollbars: true,
             	//interstitialSection:".header, .footer",
             	//scrollSpeed: 500,
           	});
@@ -29,10 +29,11 @@
     </script>
 </head>
 <body class="none-scrollbar">
+
 	<section id="section1" class="section section1 scroll-section">
 		<div class="inner">
 			<div class="video-wrap">
-				<video class="bg-video" src="/scroll/video/Dual_Coating_Video.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
+				<video class="bg-video" src="/scroll/video/Dual_Coating_Video.mp4" muted autoplay loop playsinline></video>
 			</div>
 			<div class="contents s1-content">
 				<p class="main-title s1-title">우리는 유산균을 연구합니다.</p>
@@ -42,18 +43,22 @@
 			<p class="scroll-btn float2"><a class="scroll-down" href="#section2"><img src="/scroll/img/scroll_a.png"></a></p>
 		</div>
 	</section>
+	
 	<section id="section2" class="section section2 scroll-section">
+		<div class="inner">
 		<div class="video-wrap">
-			<video class="bg-video" src="/scroll/video/main-nature-sample-min.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
+			<video class="bg-video" src="/scroll/video/main-nature-sample-min.mp4" muted autoplay loop playsinline></video>
+			<div class="contents s2-content">
+				<p class="main-title s2-title">지구를 생각합니다.<br>쎌바이오텍의 ESG 이야기</p>
+				<p class="subtext s2-subtext">영상 삽입#2 전 세계적으로 ESG 경영의 중요성이 강조되는 가운데,</p>
+				<p class="subtext s2-subtext">자연 느낌의 영상도 많이 사용되고 있습니다.</p>
+			</div>
+			<p class="scroll-btn float2"><a class="scroll-down" href="#section3"><img src="/scroll/img/scroll_a.png"></a></p>
 		</div>
-		<div class="contents s2-content">
-			<p class="main-title s2-title">지구를 생각합니다.<br>쎌바이오텍의 ESG 이야기</p>
-			<p class="subtext s2-subtext">영상 삽입#2 전 세계적으로 ESG 경영의 중요성이 강조되는 가운데,</p>
-			<p class="subtext s2-subtext">자연 느낌의 영상도 많이 사용되고 있습니다.</p>
-		</div>
-		<p class="scroll-btn float2"><a class="scroll-down" href="#section3"><img src="/scroll/img/scroll_a.png"></a></p>
+	</div>
 	</section>
-	<section id="section3" class="long-section section3 scroll-section">
+
+	<section id="section3" class="section section3 scroll-section">
 		<div class="inner">
 
 		<div class="long-contents s3-content demo-section">
