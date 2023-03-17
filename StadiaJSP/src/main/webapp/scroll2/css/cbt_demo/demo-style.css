@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+.demo-section {
+    width: 100%;
+    padding-top: 108px;
+    padding-bottom: 35px;
+    font-size: 35px;
+    color: #174473;
+    font-family: 'dm';
+    /*background: url(../images/content/ir/bg_upline.png) no-repeat center top !important;*/
+    font-weight: normal;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+}
+.demo-container {
+    /*overflow: hidden;*/
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    font-size: 35px;
+    color: #174473;
+    font-family: 'dm';
+}
+.demo-container::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.demo-contentTit {
+    margin-bottom: 40px;
+    text-align: center;
+}
+.demo-title { 
+    display: block !important;
+    position: relative;
+    color: #164e88;
+    line-height: 1 !important;
+    padding-bottom: 20px;
+    padding-top: 0px;
+    background: none !important;
+    margin: 0 !important;
+    font-size: 35px !important;
+    box-sizing: inherit;
+    font-weight: 400;
+    text-align: center;
+}
+.demo-sub-title {
+    margin: 0;
+    padding: 20px 0 0 0;
+    font-size: 16px;
+    color: #000;
+}
+.demo-row {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+
+}
+.demo-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media only screen and (min-width: 641px) {
+    .demo-row .col.m6 {
+        width: 50%;
+    }
+}
+.demo-row .col.s12 {
+    margin-left: auto;
+}
+.demo-row .col {
+    float: left;
+    box-sizing: border-box;
+    min-height: 1px;
+}
+
+@media only screen and (min-width: 1050px){
+    .leader1 {
+        padding-left: 245px;
+        background: url(/scroll/img/demo/bg_leader1.jpg) no-repeat 140px center;
+    }
+}
+@media only screen and (min-width: 1050px){
+    .leader dt {
+        font-size: 20px;
+        color: #000;
+    }
+}
+@media only screen and (min-width: 1050px) {
+    .leader dd {
+        font-size: 14px;
+        color: #666;
+        width: 80%;
+        margin: 0;
+        padding: 0;
+    }
+}
+@media only screen and (min-width: 1050px) {
+    .leader2 {
+        padding-left: 195px;
+        background: url(/scroll/img/demo/bg_leader2.jpg) no-repeat 90px center;
+    }
+}
+@media only screen and (min-width: 1050px) {
+    .leader3 {
+        padding-left: 245px;
+        background: url(/scroll/img/demo/bg_leader3.jpg) no-repeat 140px center;
+    }
+}
+@media only screen and (min-width: 1050px) {
+    .leader4 {
+        padding-left: 195px;
+        background: url(/scroll/img/demo/bg_leader4.jpg) no-repeat 90px center;
+    }
+}
+@media only screen and (min-width: 1050px) {
+    .leader dt span {
+        font-size: 16px;
+    }
+
+}

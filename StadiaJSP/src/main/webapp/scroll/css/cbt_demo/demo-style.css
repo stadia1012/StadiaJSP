@@ -4,6 +4,7 @@
     box-sizing: inherit;
 }
 .demo-section {
+    width: 100%;
     padding-top: 108px;
     padding-bottom: 35px;
     font-size: 35px;
@@ -15,7 +16,7 @@
     -webkit-text-size-adjust: 100%;
 }
 .demo-container {
-    overflow: hidden;
+    /*overflow: hidden;*/
     width: 100%;
     margin: 0 auto;
     max-width: 1200px;

@@ -8,7 +8,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'dm';
     /*src: url('/fonts/DuolacM_W.eot');*/
@@ -20,20 +19,20 @@
 html, body, section, div, p, h1, h2, h3, h4, video { padding: 0; margin: 0;}
 body {margin: 0 !important;}
 
-/*스크롤바 숨기기*/
-.none-scroll::-webkit-scrollbar {
+/*스크롤바 숨기기*//*
+.none-scrollbar::-webkit-scrollbar {
   display: none;
 }
-.none-scroll {
+.none-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
+}*/
 
-.contents { position: absolute; left : 50%; transform: translate(-50%, 0);}
+.contents { position: absolute; }
 
 .s1-content { left: 50%; top: 300px; transform: translate(-50%, 0)}
 .s2-content { left: 50%; top: 30%; transform: translate(-50%, -30%)}
-.s3-content { left: 50%; top: 30%; transform: translate(-50%, -30%)}
+.s3-content { margin: 0 auto;}
 
 .contents .main-title {
     font-family: dl;
@@ -70,4 +69,4 @@ body {margin: 0 !important;}
 .section { height: 100vh !important; position: relative }
 .section1 { background-color: rgba(136, 136, 136, 0.178)}
 .section2 { background-color: rgba(150, 150, 150, 0.178)}
-.section3 { background-color: rgb(255, 255, 255)}
+.section3 { background-color: rgb(255, 255, 255); position: relative;}
