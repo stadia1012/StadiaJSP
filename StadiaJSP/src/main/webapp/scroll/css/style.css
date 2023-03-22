@@ -19,20 +19,22 @@
 html, body, section, div, p, h1, h2, h3, h4, video { padding: 0; margin: 0;}
 body {margin: 0 !important;}
 
-/*스크롤바 숨기기*//*
+/*스크롤바 숨기기*/
 .none-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .none-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}*/
+}
 
 .contents { position: absolute; }
 
 .s1-content { left: 50%; top: 300px; transform: translate(-50%, 0)}
 .s2-content { left: 50%; top: 30%; transform: translate(-50%, -30%)}
 .s3-content { margin: 0 auto;}
+
+.demo-container { height: 100vh; }
 
 .contents .main-title {
     font-family: dl;
@@ -52,6 +54,17 @@ body {margin: 0 !important;}
     text-align: center;
     color: rgb(255, 255, 255);
 }
+.demo-container{
+    height: 100vh;
+}
+
+.parallax-01 {
+    height: 70vh;
+    background-image: url("/scroll/img/dna-img.jpg");
+    background-repeat: no-repeat;
+    transform: translateZ(-1px) scale(2);
+}
+
 
 .scroll-btn {
     position: absolute;

@@ -5,8 +5,6 @@
  * Requires:
  * - jQuery 1.7 or higher
  *
- * from https://projects.lukehaas.me/scrollify
- * 
  * https://github.com/lukehaas/Scrollify
  *
  * Copyright 2016, Luke Haas
@@ -60,7 +58,6 @@ if touchScroll is false - update index
     timeoutId2,
     $window = $(window),
     portHeight,
-    top = $window.scrollTop(),
     scrollable = false,
     locked = false,
     scrolled = false,
@@ -94,9 +91,10 @@ if touchScroll is false - update index
       after:function() {},
       afterResize:function() {},
       afterRender:function() {}
-    };
+    },
+    top = $(settings.target).scrollTop();
   function getportHeight() {
-    return (window.innerHeight + settings.offset);
+    return ($(settings.target).innerHeight() + settings.offset);
   }
   function animateScroll(index,instant,callbacks,toTop) {
     if(currentIndex===index) {
@@ -250,7 +248,7 @@ if touchScroll is false - update index
         }, 200);
       },
       calculateNearest:function(instant,callbacks) {
-        top = $window.scrollTop();
+        top = $(settings.target).scrollTop();
         var i =1,
           max = heights.length,
           closest = 0,
@@ -598,7 +596,7 @@ if touchScroll is false - update index
 
     function sizePanels(keepPosition) {
       if(keepPosition) {
-        top = $window.scrollTop();
+        top = $(settings.target).scrollTop();
       }
 
       var selector = settings.section;
@@ -644,7 +642,7 @@ if touchScroll is false - update index
         }
       });
       if(keepPosition) {
-        $window.scrollTop(top);
+        $(settings.target).scrollTop(top);
       }
     }
     function calculatePositions(scroll,firstLoad) {
@@ -698,7 +696,7 @@ if touchScroll is false - update index
       if(!overflow[index]) {
         return true;
       }
-      top = $window.scrollTop();
+      top = $(settings.target).scrollTop();
       if(top>parseInt(heights[index])) {
         return false;
       } else {
@@ -709,7 +707,7 @@ if touchScroll is false - update index
       if(!overflow[index]) {
         return true;
       }
-      top = $window.scrollTop();
+      top = $(settings.target).scrollTop();
       portHeight = getportHeight();
 
       if(top<parseInt(heights[index])+(elements[index].outerHeight()-portHeight)-28) {

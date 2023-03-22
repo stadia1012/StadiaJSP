@@ -7,26 +7,6 @@
 	<link rel= "stylesheet" href="/scroll/css/cbt_demo/demo-style.css" type="text/css">
 	<link rel= "stylesheet" href="/scroll/css/style.css" type="text/css">
 	<link rel="stylesheet" href="/scroll/css/motion.css">
-	<script src="/js/jquery-3.6.4.min.js"></script>
-	<script src="/js/jquery.scrollify.js"></script>
-	<script type="text/javascript">
-        $(function() {
-        	$.scrollify({
-            	section : ".scroll-section",
-            	 scrollbars: false,
-            	//interstitialSection:".header, .footer",
-            	//scrollSpeed: 500,
-          	});
-		  	$(".scroll-down").click(function(e) {
-    			e.preventDefault();
-    			$.scrollify.next();
-  			});
-			  $(".scroll-top").click(function(e) {
-    			e.preventDefault();
-    			$.scrollify.move("#section1");
-  			});
-        });
-    </script>
 </head>
 <body class="none-scrollbar">
 	<section id="section1" class="section section1 scroll-section">
@@ -52,9 +32,8 @@
 		<p class="scroll-btn float2"><a class="scroll-down" href="#section3"><img src="/scroll/img/scroll_a.png"></a></p>
 	</section>
 	<section id="section3" class="long-section section3 scroll-section">
-		<div class="inner">
-
 		<div class="long-contents s3-content demo-section">
+			
 			<div class="demo-container">
 				<div class="demo-contentTit">
 					<h2 class="demo-title">경영 철학</h2>
@@ -88,8 +67,15 @@
 				</div>
 			</div>
 		</div>
+		<div class="parallax-01">
+			<div>
+				<p>text</p>
+			</div>
+		</div>
+		<div class="just" style="height: 100vh; background-color: rgb(198, 216, 179); position: absolute;">
 
 		</div>
+
 	</section>
 </body>
 
@@ -163,25 +149,47 @@
 		duration: 0.8, opacity: 0, y: 45,
 	});
 	gsap.from(".leader2", {
-		delay: 0.5,
+		delay: 0.6,
 		scrollTrigger: {
 			trigger: ".leader2", toggleActions: "restart reverse restart reverse"
 		},
 		duration: 0.8, opacity: 0, y: 45,
 	});
 	gsap.from(".leader3", {
-		delay: 0.6,
+		delay: 0.8,
 		scrollTrigger: {
 			trigger: ".leader3", toggleActions: "restart reverse restart reverse"
 		},
 		duration: 0.8, opacity: 0, y: 45,
 	});
 	gsap.from(".leader4", {
-		delay: 0.7,
+		delay: 1,
 		scrollTrigger: {
 			trigger: ".leader4", toggleActions: "restart reverse restart reverse"
 		},
 		duration: 0.8, opacity: 0, y: 45,
+	});
+</script>
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+<script src="/js/jquery.scrollify.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$.scrollify({
+			section : ".scroll-section",
+			scrollbars: true,
+			overflowScroll: true,
+			setHeights: false,
+			//interstitialSection:".header, .footer",
+		});
+		$(".scroll-down").click(function(e) {
+			e.preventDefault();
+			$.scrollify.next();
+		});
+			$(".scroll-top").click(function(e) {
+			e.preventDefault();
+			$.scrollify.move("#section1");
+		});
 	});
 </script>
 
