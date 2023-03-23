@@ -33,7 +33,6 @@
 	</section>
 	<section id="section3" class="long-section section3 scroll-section">
 		<div class="long-contents s3-content demo-section">
-			
 			<div class="demo-container">
 				<div class="demo-contentTit">
 					<h2 class="demo-title">경영 철학</h2>
@@ -67,13 +66,33 @@
 				</div>
 			</div>
 		</div>
-		<div class="parallax-01">
-			<div>
-				<p>text</p>
-			</div>
-		</div>
-		<div class="just" style="height: 100vh; background-color: rgb(198, 216, 179); position: absolute;">
 
+		<div class="contents s3-content2">
+			<div class="text-box-div">
+				<img id="float-img01" class="float-img float2" src="/scroll/img/duolac-probiotic.png">
+				<div class="text-box text-box-left">
+					<p id="left-title1" class="main-title">좌측에서 나오는 텍스트</p>
+					<p id="left-text1" class="subtext left-text">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
+				</div>
+			</div>
+			<div class="text-box-div">
+				<div class="text-box text-box-right">
+					<p id="right-title1" class="main-title">우측에서 나오는 텍스트</p>
+					<p id="right-text1" class="subtext">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
+				</div>
+			</div>
+			<div class="text-box-div">
+				<div class="text-box text-box-left">
+					<p id="left-title2" class="main-title">좌측에서 나오는 텍스트</p>
+					<p id="left-text2" class="subtext left-text">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
+				</div>
+			</div>
+			<div class="text-box-div">
+				<div class="text-box text-box-right">
+					<p id="right-title2" class="main-title">우측에서 나오는 텍스트</p>
+					<p id="right-text2" class="subtext">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
+				</div>
+			</div>
 		</div>
 
 	</section>
@@ -137,37 +156,98 @@
 	gsap.from(".demo-contentTit", {
 		delay: 0.2,
 		scrollTrigger: {
-			trigger: ".demo-contentTit", toggleActions: "restart reverse restart reverse"
+			trigger: ".demo-contentTit", toggleActions: "restart none none reverse"
 		},
 		duration: 0.8, opacity: 0, y: 60,
 	});
 	gsap.from(".leader1", {
 		delay: 0.4,
 		scrollTrigger: {
-			trigger: ".leader1", toggleActions: "restart reverse restart reverse"
+			trigger: ".leader1", toggleActions: "restart none none reverse"
 		},
 		duration: 0.8, opacity: 0, y: 45,
 	});
 	gsap.from(".leader2", {
 		delay: 0.6,
 		scrollTrigger: {
-			trigger: ".leader2", toggleActions: "restart reverse restart reverse"
+			trigger: ".leader2", toggleActions: "restart none none reverse"
 		},
 		duration: 0.8, opacity: 0, y: 45,
 	});
 	gsap.from(".leader3", {
 		delay: 0.8,
 		scrollTrigger: {
-			trigger: ".leader3", toggleActions: "restart reverse restart reverse"
+			trigger: ".leader3", toggleActions: "restart none none reverse"
 		},
 		duration: 0.8, opacity: 0, y: 45,
 	});
 	gsap.from(".leader4", {
 		delay: 1,
 		scrollTrigger: {
-			trigger: ".leader4", toggleActions: "restart reverse restart reverse"
+			trigger: ".leader4", toggleActions: "restart none none reverse"
 		},
 		duration: 0.8, opacity: 0, y: 45,
+	});
+
+
+	/*좌우 텍스트-1*/
+	gsap.from("#left-title1", {
+		delay: 0.2,
+		scrollTrigger: {
+			trigger: "#left-title1", toggleActions: "restart none none reverse"
+		},
+		duration: 0.6, opacity: 0, x: -45,
+	});
+	gsap.from("#left-text1", {
+		delay: 0.2,
+		scrollTrigger: {
+			trigger: "#left-text1", toggleActions: "restart none none reverse"
+		},
+		duration: 0.6, opacity: 0, x: -45,
+	});
+	gsap.from("#right-title1", {
+		delay: 0.2,
+		scrollTrigger: {
+			trigger: "#right-title1", toggleActions: "restart none none reverse"
+		},
+		duration: 0.6, opacity: 0, x: 45,
+	});
+	gsap.from("#right-text1", {
+		delay: 0.2,
+		scrollTrigger: {
+			trigger: "#right-text1", toggleActions: "restart none none reverse"
+		},
+		duration: 0.6, opacity: 0, x: 45,
+	});
+
+	/*좌우 텍스트-2*/
+	gsap.from("#left-title2", {
+		delay: 0.2,
+		scrollTrigger: {
+			trigger: "#left-title2", toggleActions: "restart none none reverse"
+		},
+		duration: 0.6, opacity: 0, x: -45,
+	});
+	gsap.from("#left-text2", {
+		delay: 0.2,
+		scrollTrigger: {
+			trigger: "#left-text2", toggleActions: "restart none none reverse"
+		},
+		duration: 0.6, opacity: 0, x: -45,
+	});
+	gsap.from("#right-title2", {
+		delay: 0.2,
+		scrollTrigger: {
+			trigger: "#right-title2", toggleActions: "restart none none reverse"
+		},
+		duration: 0.6, opacity: 0, x: 45,
+	});
+	gsap.from("#right-text2", {
+		delay: 0.2,
+		scrollTrigger: {
+			trigger: "#right-text2", toggleActions: "restart none none reverse"
+		},
+		duration: 0.6, opacity: 0, x: 45,
 	});
 </script>
 
