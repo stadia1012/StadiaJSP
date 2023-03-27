@@ -75,6 +75,15 @@
 .demo-row .col.s12 {
     margin-left: auto;
 }
+.demo-row .col.s12 {
+    width: 100%;
+}
+@media only screen and (min-width: 641px) {
+    .demo-row .col.m6 {
+        width: 50%;
+    }
+}
+
 .demo-row .col {
     float: left;
     box-sizing: border-box;

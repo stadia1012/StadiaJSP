@@ -409,6 +409,17 @@ Copyright (c) 2015-2016 Petr Pavlyuk
     }
 }
 
+/*fade-out-down-repeat 추가*/
+.fade-out-down-repeat
+{
+    -webkit-animation: fade-out-down 1.3s;
+            animation: fade-out-down 1.3s;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+}
+
 /*slide-in right*/
 .slide-in-right
 {
