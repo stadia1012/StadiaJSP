@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="/scroll/css/motion.css">
 </head>
 <body class="none-scrollbar">
-	<section id="section1" class="section section1 scroll-section">
+	<section class="section section1 scrollSection" data-section-name="section1">
 		<div class="video-wrap">
 			<video class="bg-video" src="/scroll/video/Dual_Coating_Video.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
 		</div>
@@ -21,19 +21,42 @@
 			<p class="subtext s1-subtext">기업 문화 영상을 넣기도 합니다.</p>
 		</div>
 		<p class="scroll-btn float2"><a class="scroll-down" href="#section2"><img src="/scroll/img/scroll_a.png"></a></p>
+		<!-- Nav: scrollify에 사용할 경우 section1에 넣음(examples 참조) -->
+		<div class="main-nav">
+			<ul class="main-nav-ul">
+				<li>
+					<a class='scroll-top'href="#section1">
+						<span class="nav-dot-section1"></span>
+					</a>
+					<div class="nav-text nav-text-section1">Section 1</div>
+				</li>
+				<li>
+					<a class='scroll-2nd' href="#section2">
+						<span class="nav-dot-section2"></span>
+					</a>
+					<div class="nav-text nav-text-section2">Section 2</div>
+				</li>
+				<li>
+					<a class='scroll-3rd' href="#section3">
+						<span class="nav-dot-section3"></span>
+					</a>
+					<div class="nav-text nav-text-section3">Section 3</div>
+				</li>
+			</ul>
+		</div>
 	</section>
-	<section id="section2" class="section section2 scroll-section">
+	<section class="section section2 scrollSection"  data-section-name="section2">
 		<div class="video-wrap">
 			<video class="bg-video" src="/scroll/video/main-nature-sample-min.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
 		</div>
 		<div class="contents s2-content">
 			<p class="main-title s2-title">지구를 생각합니다.<br>쎌바이오텍의 ESG 이야기</p>
-			<p class="subtext s2-subtext">영상 삽입#2 전 세계적으로 ESG 경영의 중요성이 강조되는 가운데,</p>
+			<p class="subtext s2-subtext">영상 삽입#2 세계적으로 ESG 경영의 중요성이 강조되는 가운데,</p>
 			<p class="subtext s2-subtext">자연 느낌의 영상도 많이 사용되고 있습니다.</p>
 		</div>
 		<p class="scroll-btn float2"><a class="scroll-down" href="#section3"><img src="/scroll/img/scroll_a.png"></a></p>
 	</section>
-	<section id="section3" class="long-section section3 scroll-section">
+	<section class="long-section section3 scrollSection"  data-section-name="section3">
 		<div class="section bglineH">
 			<div class="container">
 				<div class="contentTit center bgnone">
@@ -99,26 +122,6 @@
 		</div>
 
 	</section>
-	<!--
-	<div class="main-nav">
-		<ul>
-			<li>
-				<a href="#1">
-					<span></span>
-				</a>
-			</li>
-			<li>
-				<a href="#2">
-					<span></span>
-				</a>
-			</li>
-			<li>
-				<a href="#3">
-					<span></span>
-				</a>
-			</li>
-		</ul>
-	</div>-->
 </body>
 
 <script src="/js/gsap-public/minified/gsap.min.js"></script>
@@ -286,14 +289,24 @@
 		},
 		duration: 0.6, opacity: 0, x: 45,
 	});
+
+	gsap.to("#right-text2", {
+		delay: 0.3,
+		scrollTrigger: {
+			trigger: "#right-text2", toggleActions: "restart none none reverse"
+		},
+		duration: 0.6, opacity: 0, x: 45,
+	});
+
 </script>
 
 <script src="/js/jquery-3.6.4.min.js"></script>
 <script src="/js/jquery.scrollify.js"></script>
+
 <script type="text/javascript">
 	$(function() {
 		$.scrollify({
-			section : ".scroll-section",
+			section : ".scrollSection",
 			scrollbars: true,
 			overflowScroll: true,
 			setHeights: false,
@@ -304,40 +317,83 @@
 			e.preventDefault();
 			$.scrollify.next();
 		});
-			$(".scroll-top").click(function(e) {
+
+		// 원래는 id가 아닌 인덱스 번호("#1") / data-section-name=""로 변경함
+		$(".scroll-top").click(function(e) {
 			e.preventDefault();
 			$.scrollify.move("#section1");
 		});
-	});
-</script>
+		$(".scroll-2nd").click(function(e) {
+			e.preventDefault();
+			$.scrollify.move("#section2");
+		});
+		$(".scroll-3rd").click(function(e) {
+			e.preventDefault();
+			$.scrollify.move("#section3");
+		});
 
-<!--section 단위 스크롤 바닐라 js script>
-	var mHtml = $("html");
-	var page = 1;
-	mHtml.animate({scrollTop : 0},10);
-	$(window).on("wheel", function(e) {
-    if(mHtml.is(":animated")) return;
-    if(e.originalEvent.deltaY > 0) {
-        if(page == 4) return;
-        page++;
-    } else if(e.originalEvent.deltaY < 0) {
-        if(page == 1) return;
-        page--;
-    }
-    var posTop =(page-1) * $(window).height();
-    mHtml.animate({scrollTop : posTop});
-})
-</script-->
+		/*
+		before:function(i, scrollSection) {
+			var ref = scrollSections[i].attr("data-section-name");
+			$(".main-nav .active").removeClass("active");
+			$(".main-nav").find("div[class=\"nav-text-" + ref + "\"]").addClass("active");
+		},
+
+		
+		afterRender:function() {
+			var pagination = "<ul class=\"main-nav-ul\">";
+			var activeClass = "";
+			$(".scrollSection").each(function(i) {
+				activeClass = "";
+				if(i===$.scrollify.currentIndex()) {
+					activeClass = "active";
+				}
+				pagination += "<li><a class=\"scroll-top" + activeClass + "\" href=\"#" + $(this).attr("data-section-name") + "\"><span class=\"hover-text\">" + $(this).attr("data-section-name").charAt(0).toUpperCase() + $(this).attr("data-section-name").slice(1) + "</span></a></li>";
+			});
+
+			pagination += "</ul>";
+
+			$(".home").append(pagination);
+			$(".pagination a").on("click",$.scrollify.move);
+		}*/
+	})
+</script>
 
 <script>
-	/* 스크롤 부드럽게 */
-	/*$('scoll-a1').click(function () {
-	  $('html, body').animate({
-		scrollTop: $($.attr(this, 'href')).offset().top
-	  }, 500);
-	  return false;
-	});*/
-</script>
+	/*pagination (vanila JS)*/
+	/* href를 null로 받아오는 오류로 미사용
 
+	const sections = document.querySelectorAll(".section");
+	const navs = document.querySelectorAll(".nav-text");
+
+	var global_href = "";
+	var global_current = "";
+	window.addEventListener("scroll",()=>{
+		//현재 영역의 id값
+		let current=""
+		sections.forEach(section=>{
+			//각 section의 top 위치(절대적 위치)
+			const sectionTop = window.scrollY + section.getBoundingClientRect().top;
+
+			//누적된 스크롤이 section의 top위치에 도달했거나 section의 안에 위치할 경우
+			if(window.scrollY >= sectionTop) {
+				current = section.getAttribute("id");
+			}
+
+			navs.forEach(nav=>{
+				nav.classList.remove("active");
+				//여기까진 문제가 없지만, scrollify 영향인지 href를 null로 가져온다.
+				const href = nav.getAttribute("href").substring(1);
+				if(href===current) {
+					//현재 있는 영역의 id와 메뉴의 링크주소가 일치할때
+					nav.classList.add("active");
+				}
+				global_href = "";
+				global_current = "";
+
+			})
+		})
+	})*/
+</script>
 
 </html>

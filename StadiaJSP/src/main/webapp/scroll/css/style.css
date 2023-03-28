@@ -161,39 +161,83 @@ body {margin: 0 !important;}
 }
 /*keep scroll E*/
 
+
+
 /*main nav S*/
 .main-nav {
     position: fixed;
-    z-index: 50;
+    z-index: 10;
     top: 50%;
-    right: 100px;
-    -webkit-transform: translate3d(0,0,0);
+    right: 40px;
+    opacity: 1;
+    transform: translate(0, -50%);
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 .main-nav ul li {
     display: block;
     width: 15px;
     height: 15px;
-    margin: 20px 0 0 0;
+    margin: 23px 0 0 0;
     position: relative;
 }
 .main-nav ul li a {
     display: block;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     width: 100%;
     height: 100%;
     cursor: pointer;
     text-decoration: none;
 }
 .main-nav ul li a span {
-    background-color: rgb(255, 119, 40);
+    background-color: rgb(255, 255, 255);
+    border: 1px;
+    border-color: rgb(255, 119, 40);
     border-radius: 100%;
+    position: absolute;
+    z-index: 10;
+    width: 6px;
+    height: 6px;
+}
+.main-nav ul li .active span {
+    background-color: rgb(255, 119, 40);
+}
+.main-nav ul li div {
+    opacity: 0;
+    overflow: hidden;
+    width: auto;
+    max-width: 100px;
+    position: absolute;
+    white-space: nowrap;
+    right: 26px;
+    top: -10px;
+    -webkit-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+}
+.main-nav ul li .active {
+    opacity: 1;
+} 
+
+.main-nav ul li:nth-child(1) a:hover + div {
+    opacity: 1;
+}
+.main-nav ul li:nth-child(2) a:hover + div {
+    opacity: 1;
+}
+.main-nav ul li:nth-child(3) a:hover + div {
+    opacity: 1;
 }
 /*main nav E*/
+
 
 .video-wrap { position: absolute; top: 0; left: 0; height: 100%; width: 100% }
 .bg-video {position: absolute; width: 100%; height: 100%; left: 50%; transform: translateX(-50%); object-fit: cover;}
 
+/*sections*/
 .section { height: 100vh !important; position: relative }
 .section1 { background-color: rgba(136, 136, 136, 0.178)}
 .section2 { background-color: rgba(150, 150, 150, 0.178)}
