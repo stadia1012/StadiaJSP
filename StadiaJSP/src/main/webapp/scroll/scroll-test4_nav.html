@@ -13,7 +13,7 @@
 <body class="none-scrollbar">
 	<section class="section section1 scrollSection" data-section-name="section1">
 		<div class="video-wrap">
-			<!--video class="bg-video" src="/scroll/video/Dual_Coating_Video.mp4" muted autoplay loop playsinline style="z-index: -1;"></video-->
+			<video class="bg-video" src="/scroll/video/Dual_Coating_Video.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
 		</div>
 		<div class="contents s1-content">
 			<p class="main-title s1-title">우리는 유산균을 연구합니다.</p>
@@ -26,9 +26,9 @@
 			<ul class="main-nav-ul">
 				<li>
 					<a class='scroll-top'href="#section1">
-						<span class="nav-dot-section1"></span>
+						<span class="nav-dot-section1 active-dot"></span>
 					</a>
-					<div class="nav-text nav-text-section1">Section 1</div>
+					<div class="nav-text nav-text-section1 active-text">Section 1</div>
 				</li>
 				<li>
 					<a class='scroll-2nd' href="#section2">
@@ -52,7 +52,7 @@
 		<div class="contents s2-content">
 			<p class="main-title s2-title">지구를 생각합니다.<br>쎌바이오텍의 ESG 이야기</p>
 			<p class="subtext s2-subtext">영상 삽입#2 세계적으로 ESG 경영의 중요성이 강조되는 가운데,</p>
-			<p class="subtext s2-subtext">자연 느낌의 영상도 많이 사용되고 있습니다.</p>
+			<p class="subtext s2-subtext">친환경, 자연 영상도 많이 사용되고 있습니다.</p>
 		</div>
 		<p class="scroll-btn float2"><a class="scroll-down" href="#section3"><img src="/scroll/img/scroll_a.png"></a></p>
 	</section>
@@ -106,6 +106,12 @@
 					<p id="right-title1" class="main-title">우측에서 나오는 텍스트</p>
 					<p id="right-text1" class="subtext">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
 				</div>
+			</div>
+			<div class="p-text-box">
+				<p>이 텍스트 상자는 다른 요소보다 스크롤 속도가 빠릅니다.</p>
+			</div> 
+			<div class="p-img">
+				<img src="/scroll/img/p-img01.png">
 			</div>
 			<div class="text-box-div">
 				<div class="text-box text-box-left">
@@ -259,6 +265,28 @@
 		},
 		duration: 0.6, opacity: 0, x: -45,
 	});
+
+	gsap.to(".p-text-box", {
+		yPercent: -300,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".p-text-box",
+			// start: "top bottom", // the default values
+			// end: "bottom top",
+			scrub: true
+		}, 
+	});
+
+	gsap.to(".p-img", {
+		yPercent: -400,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".p-img",
+			// start: "top bottom", // the default values
+			// end: "bottom top",
+			scrub: true
+		}, 
+	});
 	
 	/*좌우 텍스트-2*/
 	gsap.from("#left-title2", {
@@ -290,14 +318,6 @@
 		duration: 0.6, opacity: 0, x: 45,
 	});
 
-	gsap.to("#right-text2", {
-		delay: 0.3,
-		scrollTrigger: {
-			trigger: "#right-text2", toggleActions: "restart none none reverse"
-		},
-		duration: 0.6, opacity: 0, x: 45,
-	});
-
 </script>
 
 <script src="/js/jquery-3.6.4.min.js"></script>
@@ -312,6 +332,19 @@
 			setHeights: false,
 			touchScroll: false,
 			//interstitialSection:".header, .footer",
+			before:function(i, sections) {
+				var ref = sections[i].attr("data-section-name");
+
+				$(".main-nav .active-text").removeClass("active-text");
+				$(".main-nav .active-dot").removeClass("active-dot");
+				$(".main-nav").find("div[class=\"nav-text nav-text-" + ref + "\"]").addClass("active-text");
+				$(".main-nav").find("span[class=\"nav-dot-" + ref + "\"]").addClass("active-dot");
+				if ( ref == "section3") {
+					$(".nav-text").css('color', 'rgb(255, 119, 40)');
+				} else {
+					$(".nav-text").css('color', 'white');
+				}
+			},
 		});
 		$(".scroll-down").click(function(e) {
 			e.preventDefault();

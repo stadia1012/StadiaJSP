@@ -42,13 +42,16 @@ body {margin: 0 !important;}
     text-align: center;
     color: rgb(25, 15, 117);
     margin-bottom: 20px;
+    width: 100%;
 }
 .text-box-left .main-title {
     font-size: 40px;
     margin-bottom: 13px;
 }
 
-
+.last-text-box {
+    margin-bottom: 60px;
+}
 
 .contents .s2-title {color: rgb(255, 255, 255);}
 .text-box {
@@ -56,7 +59,7 @@ body {margin: 0 !important;}
 }
 .text-box-right { 
     position: absolute;
-    right: 7%;
+    right: 5.3%;
     margin: 50px 0px 0px 0px; }
 .text-box-left {
     position: absolute;
@@ -77,6 +80,9 @@ body {margin: 0 !important;}
     height: 35vh;
     position: relative;
 }
+.text-box .subtext {
+    margin-bottom: 10vh;
+}
 .text-box-right .main-title, .text-box-right .subtext {
     text-align: left;
 }
@@ -84,7 +90,7 @@ body {margin: 0 !important;}
     text-align: left;
 }
 .main-title {
-    width:100vw;
+    width: 120%;
 }
 .s3-content2 .subtext {
     color: rgb(36, 36, 36);
@@ -103,7 +109,7 @@ body {margin: 0 !important;}
     height: 80vh;
 }
 
-/*parallax Start*/
+/*[미사용]parallax Start*/
 .demo-section {
     background-color: white;
     height: 90vh;
@@ -130,6 +136,34 @@ body {margin: 0 !important;}
     box-shadow: 8px 0px 8px 0px rgba(0, 0, 0, 0.7) inset;
   }
 /*parallax End*/  
+
+/*Real parallax Start*/  
+.p-text-box {
+    width: 30vw;
+    background-color: rgba(133, 194, 35, 0.719);
+    color: white;
+    padding: 30px 35px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 20;
+}    
+
+.p-img {
+    width: 15vw;
+    margin: 0 auto;
+    text-align: center;
+    z-index: -2;
+    position: relative;
+    left: 16vw
+}
+.p-img img {
+    display: block;
+    width: 100%;
+}
+/*Real parallax End*/
+
+
 
 .scroll-btn {
     position: absolute;
@@ -195,18 +229,19 @@ body {margin: 0 !important;}
 }
 .main-nav ul li a span {
     background-color: rgb(255, 255, 255);
-    border: 1px;
+    border: 1px solid;
     border-color: rgb(255, 119, 40);
-    border-radius: 100%;
+    border-radius: 50%;
     position: absolute;
     z-index: 10;
-    width: 6px;
-    height: 6px;
+    width: 9px;
+    height: 9px;
 }
 .main-nav ul li .active span {
     background-color: rgb(255, 119, 40);
 }
 .main-nav ul li div {
+    color: rgb(255, 255, 255);
     opacity: 0;
     overflow: hidden;
     width: auto;
@@ -218,18 +253,30 @@ body {margin: 0 !important;}
     -webkit-transition: opacity 0.2s ease-in;
     transition: opacity 0.2s ease-in;
 }
-.main-nav ul li .active {
+.main-nav ul li .active-text {
     opacity: 1;
-} 
+}
+.main-nav ul li .active-dot {
+    background-color: rgb(255, 119, 40);
+}
 
 .main-nav ul li:nth-child(1) a:hover + div {
     opacity: 1;
 }
+.main-nav ul li:nth-child(1) a:hover > span {
+    background-color: rgb(255, 119, 40);
+}
 .main-nav ul li:nth-child(2) a:hover + div {
     opacity: 1;
 }
+.main-nav ul li:nth-child(2) a:hover > span {
+    background-color: rgb(255, 119, 40);
+}
 .main-nav ul li:nth-child(3) a:hover + div {
     opacity: 1;
+}
+.main-nav ul li:nth-child(3) a:hover > span {
+    background-color: rgb(255, 119, 40);
 }
 /*main nav E*/
 
