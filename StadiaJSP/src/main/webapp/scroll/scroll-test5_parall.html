@@ -93,38 +93,50 @@
 			<div id="scroll-btn-keep01" class="scroll-btn scroll-btn-keep fade-out-down-repeat"><p class="keep-scroll">계속 스크롤하세요.</p><img class="img-filter-navy" src="/scroll/img/scroll_a.png"></div>
 		</div>
 
-		<div class="contents s3-content2">
-			<div class="text-box-div">
+		<div class="contents s3-content2 z2">
+			<div class="text-box-div z5">
 				<img id="float-img01" class="float-img float2" src="/scroll/img/duolac-probiotic.png">
 				<div class="text-box text-box-left">
 					<p id="left-title1" class="main-title">좌측에서 나오는 텍스트</p>
 					<p id="left-text1" class="subtext left-text">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
 				</div>
 			</div>
-			<div class="text-box-div">
+			<div class="text-box-div z5">
 				<div class="text-box text-box-right">
 					<p id="right-title1" class="main-title">우측에서 나오는 텍스트</p>
 					<p id="right-text1" class="subtext">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
 				</div>
 			</div>
-			<div class="p-text-box">
-				<p>이 텍스트 상자는 다른 요소보다 스크롤 속도가 빠릅니다.</p>
-			</div> 
-			<div class="p-img">
-				<img src="/scroll/img/p-img01.png">
+			<div class="p-text-box-div">
+				<div class="p-text-box">
+					<p>이 텍스트 상자는 다른 요소보다 스크롤 속도가 빠릅니다.</p>
+				</div>
 			</div>
-			<div class="text-box-div">
+			<div class="p-img-div-div">
+				<div class="p-img-div">
+					<img src="/scroll/img/p-img01.png">
+				</div>
+			</div>
+			<div class="text-box-div z5">
 				<div class="text-box text-box-left">
 					<p id="left-title2" class="main-title">좌측에서 나오는 텍스트</p>
 					<p id="left-text2" class="subtext left-text">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
 				</div>
 			</div>
-			<div class="text-box-div last-text-box">
+			<div class="text-box-div z5 last-text-box">
 				<div class="text-box text-box-right">
 					<p id="right-title2" class="main-title">우측에서 나오는 텍스트</p>
 					<p id="right-text2" class="subtext">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
 				</div>
 			</div>
+		</div>
+		<div class="parallax-body z1">
+			<div class="px-title01-div">
+				<p class="main-title px-title01">Parallax Scroll</p>
+			</div>
+			<img class="parallax-01 z-50" src="/scroll/img/dna-img.jpg">
+		</div>
+		<div class="skyblue z1">
 		</div>
 	</section>
 </body>
@@ -275,12 +287,11 @@
 			scrub: true
 		}, 
 	});
-
-	gsap.to(".p-img", {
+	gsap.to(".p-img-div", {
 		yPercent: -400,
 		ease: "none",
 		scrollTrigger: {
-			trigger: ".p-img",
+			trigger: ".p-img-div",
 			// start: "top bottom", // the default values
 			// end: "bottom top",
 			scrub: true
@@ -315,6 +326,23 @@
 			trigger: "#right-text2", toggleActions: "restart none none reverse"
 		},
 		duration: 0.6, opacity: 0, x: 45,
+	});
+	gsap.from(".px-title01", {
+		delay: 0.3,
+		scrollTrigger: {
+			trigger: ".px-title01", toggleActions: "restart none none reverse"
+		},
+		duration: 0.8, opacity: 0, y: 60,
+	});
+	gsap.to(".parallax-01", {
+		yPercent: 100,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".parallax-01",
+			// start: "top bottom", // the default values
+			// end: "bottom top",
+			scrub: true
+		}, 
 	});
 
 </script>

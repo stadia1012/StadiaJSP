@@ -19,6 +19,19 @@
 html, body, section, div, p, h1, h2, h3, h4, video, ul, li { padding: 0; margin: 0;}
 body {margin: 0 !important;}
 
+.z1 {
+    z-index: 1;
+}
+.z2 {
+    z-index: 2;
+}
+.z5 {
+    z-index: 5;
+}
+.z-50 {
+    z-index: -50;
+}
+
 /*스크롤바 숨기기*/
 .none-scrollbar::-webkit-scrollbar {
   display: none;
@@ -33,7 +46,12 @@ body {margin: 0 !important;}
 .s1-content { left: 50%; top: 300px; transform: translate(-50%, 0)}
 .s2-content { left: 50%; top: 30%; transform: translate(-50%, -30%)}
 .s3-content { margin: 0 auto;}
-.s3-content2 { width: 100%; }
+.s3-content2 {
+    width: 100%; 
+    position: relative; 
+    background-color: white; 
+    display: table;
+}
 
 .contents .main-title {
     font-family: dl;
@@ -52,10 +70,12 @@ body {margin: 0 !important;}
 .last-text-box {
     margin-bottom: 60px;
 }
-
-.contents .s2-title {color: rgb(255, 255, 255);}
+.contents .s2-title {
+    color: rgb(255, 255, 255);
+}
 .text-box {
     width: 50vh;
+    z-index: 1;
 }
 .text-box-right { 
     position: absolute;
@@ -66,7 +86,9 @@ body {margin: 0 !important;}
     left: 7%;
     margin: 50px 0px 0px 0px;
 }
-
+.text-box .main-title {
+    width: 120%
+}
 .contents .subtext {
     font-family: dl;
     font-size: 20px;
@@ -109,61 +131,83 @@ body {margin: 0 !important;}
     height: 80vh;
 }
 
-/*[미사용]parallax Start*/
+/*parallax section Start*/
 .demo-section {
     background-color: white;
     height: 90vh;
 }
-.parallax-body {
-    perspective: 1px;
-    transform-style: preserve-3d;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+.s3-content2 {
+    box-shadow: 0px 11px 19px -8px rgb(0 0 0 / 32%);
+    overflow: hidden; /*그림자가 넘치는 듯*/
 }
-.parallax {
+.skyblue {
+    box-shadow: 0px -11px 19px -8px rgb(0 0 0 / 32%);
+}
+.parallax-body {
     position: relative;
-    height: 100vh;
+    height: 75vh;
     width: 100vw;
     box-sizing: border-box;
-    transform-style: inherit;
+    overflow: hidden;
 }
 .parallax-01 {
-    background-image: url("/scroll/img/dna-img.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform: translateZ(-1px) scale(2);
-    box-shadow: 8px 0px 8px 0px rgba(0, 0, 0, 0.7) inset;
-  }
-/*parallax End*/  
+    width: 100%;
+    min-width: 1300px;
+    transform: scale(1.5);
+    display: block;
+    position: relative;
+    top: -40vh;
+}
+.px-title01-div {
+    text-align: center;
+}
+.parallax-body .main-title {
+    color: white;
+    font-size: 70px;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,0.23);
 
-/*Real parallax Start*/  
+}
+.skyblue {
+    position: relative;
+    background-color: rgb(190, 172, 255);
+    height: 100vh;
+    width: 100vw;
+}
+/*parallax section End*/  
+
+/*parallax div,img Start*/  
+.p-text-box-div {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 20;
+}
 .p-text-box {
     width: 30vw;
     background-color: rgba(133, 194, 35, 0.719);
     color: white;
     padding: 30px 35px;
-    margin: 0 auto;
     text-align: center;
     position: relative;
-    z-index: 20;
 }    
-
-.p-img {
+.p-img-div-div {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+}
+.p-img-div {
     width: 15vw;
     margin: 0 auto;
     text-align: center;
-    z-index: -2;
     position: relative;
     left: 16vw
 }
-.p-img img {
+.p-img-div img {
     display: block;
     width: 100%;
 }
-/*Real parallax End*/
-
-
+/*parallax div,img End*/
 
 .scroll-btn {
     position: absolute;
@@ -194,8 +238,6 @@ body {margin: 0 !important;}
     filter: opacity(0.5) drop-shadow(0 0 0 #164e88);
 }
 /*keep scroll E*/
-
-
 
 /*main nav S*/
 .main-nav {
@@ -236,9 +278,10 @@ body {margin: 0 !important;}
     z-index: 10;
     width: 9px;
     height: 9px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
 }
 .main-nav ul li .active span {
-    background-color: rgb(255, 119, 40);
+    /*background-color: rgb(255, 119, 40);*/
 }
 .main-nav ul li div {
     color: rgb(255, 255, 255);
@@ -252,6 +295,7 @@ body {margin: 0 !important;}
     top: -10px;
     -webkit-transition: opacity 0.2s ease-in;
     transition: opacity 0.2s ease-in;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,0.23);
 }
 .main-nav ul li .active-text {
     opacity: 1;
