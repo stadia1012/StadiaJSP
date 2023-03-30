@@ -159,13 +159,17 @@ body {margin: 0 !important;}
     top: -40vh;
 }
 .px-title01-div {
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, 0);
     text-align: center;
+    position: absolute;
 }
 .parallax-body .main-title {
     color: white;
     font-size: 70px;
     text-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,0.23);
-
+    
 }
 .skyblue {
     position: relative;
