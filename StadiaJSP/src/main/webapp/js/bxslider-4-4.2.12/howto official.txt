@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/path/to/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="/path/to/jquery.bxslider.min.js"></script>
+
+// Initialize the slider
+<script>
+  $(document).ready(function(){
+    $('.slider').bxSlider();
+  });
+</script>
+
+// Slider HTML (change this to your own!)
+<div class="slider">
+  <div>I am a slide.</div>
+  <div>I am another slide.</div>
+</div>

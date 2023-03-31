@@ -4,14 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Stadia's Home</title>
-	<!--link rel= "stylesheet" href="/scroll/css/cbt_demo/demo-style.css" type="text/css"-->
-	<link rel= "stylesheet" href="/scroll/css/cbt_demo/materialize.css" type="text/css">
-	<link rel= "stylesheet" href="/scroll/css/cbt_demo/style.css" type="text/css">
+	<link rel= "stylesheet" href="/scroll/css/cbt_demo/demo-style.css" type="text/css">
 	<link rel= "stylesheet" href="/scroll/css/style.css" type="text/css">
 	<link rel="stylesheet" href="/scroll/css/motion.css">
 </head>
 <body class="none-scrollbar">
-	<section class="section section1 scrollSection" data-section-name="section1">
+	<section id="section1" class="section section1 scroll-section">
 		<div class="video-wrap">
 			<video class="bg-video" src="/scroll/video/Dual_Coating_Video.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
 		</div>
@@ -21,49 +19,26 @@
 			<p class="subtext s1-subtext">기업 문화 영상을 넣기도 합니다.</p>
 		</div>
 		<p class="scroll-btn float2"><a class="scroll-down" href="#section2"><img src="/scroll/img/scroll_a.png"></a></p>
-		<!-- Nav: scrollify에 사용할 경우 section1에 넣음(examples 참조) -->
-		<div class="main-nav">
-			<ul class="main-nav-ul">
-				<li>
-					<a class='scroll-top'href="#section1">
-						<span class="nav-dot-section1 active-dot"></span>
-					</a>
-					<div class="nav-text nav-text-section1 active-text">Section 1</div>
-				</li>
-				<li>
-					<a class='scroll-2nd' href="#section2">
-						<span class="nav-dot-section2"></span>
-					</a>
-					<div class="nav-text nav-text-section2">Section 2</div>
-				</li>
-				<li>
-					<a class='scroll-3rd' href="#section3">
-						<span class="nav-dot-section3"></span>
-					</a>
-					<div class="nav-text nav-text-section3">Section 3</div>
-				</li>
-			</ul>
-		</div>
 	</section>
-	<section class="section section2 scrollSection"  data-section-name="section2">
+	<section id="section2" class="section section2 scroll-section">
 		<div class="video-wrap">
 			<video class="bg-video" src="/scroll/video/main-nature-sample-min.mp4" muted autoplay loop playsinline style="z-index: -1;"></video>
 		</div>
 		<div class="contents s2-content">
 			<p class="main-title s2-title">지구를 생각합니다.<br>쎌바이오텍의 ESG 이야기</p>
-			<p class="subtext s2-subtext">영상 삽입#2 세계적으로 ESG 경영의 중요성이 강조되는 가운데,</p>
-			<p class="subtext s2-subtext">친환경, 자연 영상도 많이 사용되고 있습니다.</p>
+			<p class="subtext s2-subtext">영상 삽입#2 전 세계적으로 ESG 경영의 중요성이 강조되는 가운데,</p>
+			<p class="subtext s2-subtext">자연 느낌의 영상도 많이 사용되고 있습니다.</p>
 		</div>
 		<p class="scroll-btn float2"><a class="scroll-down" href="#section3"><img src="/scroll/img/scroll_a.png"></a></p>
 	</section>
-	<section class="long-section section3 scrollSection"  data-section-name="section3">
-		<div class="section bglineH">
-			<div class="container">
-				<div class="contentTit center bgnone">
-					<h2 class="header center centerOverview nolineH fs35 no-margin">경영 철학</h2>
-					<p class=" bgnone" style="font-size: 18px">시간 차를 둔 요소의 fade-in도 가능합니다.</p>
+	<section id="section3" class="long-section section3 scroll-section">
+		<div class="long-contents s3-content demo-section">
+			<div class="demo-container">
+				<div class="demo-contentTit">
+					<h2 class="demo-title">경영 철학</h2>
+					<p class="demo-sub-title">시간 차를 두고 요소의 fade-in도 가능합니다.</p>
 				</div>
-				<div class="row">
+				<div class="demo-row">
 					<div class="col s12 m6">
 						<dl class="leader1 leader">
 							<dt>New technology<br><span>첨단의 신기술</span></dt>
@@ -85,59 +60,41 @@
 					<div class="col s12 m6">
 						<dl class="leader4 leader">
 							<dt>Technology-intensive<br><span>기술집약형 기업</span></dt>
-							<dd>인류의 건강을 위한 올바른 미래사회를 책임질 프로바이오틱스 전문 기술과 인재 육성</dd>
+							<dd>인류의 건강을 위한 올바른 미래사회를 책임질 프로바이오틱스 전문 기술과인재 육성</dd>
 						</dl>
 					</div>
 				</div>
 			</div>
-			<div id="scroll-btn-keep01" class="scroll-btn scroll-btn-keep fade-out-down-repeat"><p class="keep-scroll">계속 스크롤하세요.</p><img class="img-filter-navy" src="/scroll/img/scroll_a.png"></div>
 		</div>
 
-		<div class="contents s3-content2 z2">
-			<div class="text-box-div z5">
+		<div class="contents s3-content2">
+			<div class="text-box-div">
 				<img id="float-img01" class="float-img float2" src="/scroll/img/duolac-probiotic.png">
 				<div class="text-box text-box-left">
 					<p id="left-title1" class="main-title">좌측에서 나오는 텍스트</p>
 					<p id="left-text1" class="subtext left-text">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
 				</div>
 			</div>
-			<div class="text-box-div z5">
+			<div class="text-box-div">
 				<div class="text-box text-box-right">
 					<p id="right-title1" class="main-title">우측에서 나오는 텍스트</p>
 					<p id="right-text1" class="subtext">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
-				</div>r
-			</div>
-			<div class="p-text-box-div">
-				<div class="p-text-box">
-					<p>이 텍스트 상자는 다른 요소보다 스크롤 속도가 빠릅니다.</p>
 				</div>
 			</div>
-			<div class="p-img-div-div">
-				<div class="p-img-div">
-					<img src="/scroll/img/p-img01.png">
-				</div>
-			</div>
-			<div class="text-box-div z5">
+			<div class="text-box-div">
 				<div class="text-box text-box-left">
 					<p id="left-title2" class="main-title">좌측에서 나오는 텍스트</p>
 					<p id="left-text2" class="subtext left-text">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
 				</div>
 			</div>
-			<div class="text-box-div z5 last-text-box">
+			<div class="text-box-div">
 				<div class="text-box text-box-right">
 					<p id="right-title2" class="main-title">우측에서 나오는 텍스트</p>
 					<p id="right-text2" class="subtext">스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. 스크롤 인터랙티브 텍스트 예시입니다. </p>
 				</div>
 			</div>
 		</div>
-		<div class="parallax-body z1">
-			<div class="px-title01-div">
-				<p class="main-title px-title01">Parallax Scroll</p>
-			</div>
-			<img class="parallax-01 z-50" src="/scroll/img/dna-img.jpg">
-		</div>
-		<div class="skyblue z1">
-		</div>
+
 	</section>
 </body>
 
@@ -231,229 +188,118 @@
 		},
 		duration: 0.8, opacity: 0, y: 45,
 	});
-	gsap.from("#scroll-btn-keep01", {
-		delay: 3,
-		scrollTrigger: {
-			trigger: "#scroll-btn-keep01", toggleActions: "restart none none reverse"
-		},
-		duration: 0.8, opacity: 0,
-	});
 
 
 	/*좌우 텍스트-1*/
 	gsap.from("#left-title1", {
-		delay: 0.3,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: "#left-title1", toggleActions: "restart none none reverse"
 		},
 		duration: 0.6, opacity: 0, x: -45,
 	});
 	gsap.from("#left-text1", {
-		delay: 0.3,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: "#left-text1", toggleActions: "restart none none reverse"
 		},
 		duration: 0.6, opacity: 0, x: -45,
 	});
 	gsap.from("#right-title1", {
-		delay: 0.3,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: "#right-title1", toggleActions: "restart none none reverse"
 		},
 		duration: 0.6, opacity: 0, x: 45,
 	});
 	gsap.from("#right-text1", {
-		delay: 0.3,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: "#right-text1", toggleActions: "restart none none reverse"
 		},
 		duration: 0.6, opacity: 0, x: 45,
 	});
-	gsap.from("#float-img01", {
-		delay: 0.3,
-		scrollTrigger: {
-			trigger: "#left-title1", toggleActions: "restart none none reverse"
-		},
-		duration: 0.6, opacity: 0, x: -45,
-	});
 
-	gsap.to(".p-text-box", {
-		yPercent: -300,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".p-text-box",
-			// start: "top bottom", // the default values
-			// end: "bottom top",
-			scrub: true
-		}, 
-	});
-	gsap.to(".p-img-div", {
-		yPercent: -400,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".p-img-div",
-			// start: "top bottom", // the default values
-			// end: "bottom top",
-			scrub: true
-		}, 
-	});
-	
 	/*좌우 텍스트-2*/
 	gsap.from("#left-title2", {
-		delay: 0.3,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: "#left-title2", toggleActions: "restart none none reverse"
 		},
 		duration: 0.6, opacity: 0, x: -45,
 	});
 	gsap.from("#left-text2", {
-		delay: 0.3,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: "#left-text2", toggleActions: "restart none none reverse"
 		},
 		duration: 0.6, opacity: 0, x: -45,
 	});
 	gsap.from("#right-title2", {
-		delay: 0.3,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: "#right-title2", toggleActions: "restart none none reverse"
 		},
 		duration: 0.6, opacity: 0, x: 45,
 	});
 	gsap.from("#right-text2", {
-		delay: 0.3,
+		delay: 0.2,
 		scrollTrigger: {
 			trigger: "#right-text2", toggleActions: "restart none none reverse"
 		},
 		duration: 0.6, opacity: 0, x: 45,
 	});
-	gsap.from(".px-title01", {
-		delay: 0.3,
-		scrollTrigger: {
-			trigger: ".px-title01", toggleActions: "restart none none reverse"
-		},
-		duration: 0.8, opacity: 0, y: 60,
-	});
-	gsap.to(".parallax-01", {
-		yPercent: 100,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".parallax-01",
-			// start: "top bottom", // the default values
-			// end: "bottom top",
-			scrub: true
-		}, 
-	});
-
 </script>
 
 <script src="/js/jquery-3.6.4.min.js"></script>
 <script src="/js/jquery.scrollify.js"></script>
-
 <script type="text/javascript">
 	$(function() {
 		$.scrollify({
-			section : ".scrollSection",
+			section : ".scroll-section",
 			scrollbars: true,
 			overflowScroll: true,
 			setHeights: false,
-			touchScroll: false,
 			//interstitialSection:".header, .footer",
-			before:function(i, sections) {
-				var ref = sections[i].attr("data-section-name");
-
-				$(".main-nav .active-text").removeClass("active-text");
-				$(".main-nav .active-dot").removeClass("active-dot");
-				$(".main-nav").find("div[class=\"nav-text nav-text-" + ref + "\"]").addClass("active-text");
-				$(".main-nav").find("span[class=\"nav-dot-" + ref + "\"]").addClass("active-dot");
-				if ( ref == "section3") {
-					$(".nav-text").css('color', 'rgb(255, 119, 40)');
-				} else {
-					$(".nav-text").css('color', 'white');
-				}
-			},
 		});
 		$(".scroll-down").click(function(e) {
 			e.preventDefault();
 			$.scrollify.next();
 		});
-
-		// 원래는 id가 아닌 인덱스 번호("#1") / data-section-name=""로 변경함
-		$(".scroll-top").click(function(e) {
+			$(".scroll-top").click(function(e) {
 			e.preventDefault();
 			$.scrollify.move("#section1");
 		});
-		$(".scroll-2nd").click(function(e) {
-			e.preventDefault();
-			$.scrollify.move("#section2");
-		});
-		$(".scroll-3rd").click(function(e) {
-			e.preventDefault();
-			$.scrollify.move("#section3");
-		});
-
-		/*
-		before:function(i, scrollSection) {
-			var ref = scrollSections[i].attr("data-section-name");
-			$(".main-nav .active").removeClass("active");
-			$(".main-nav").find("div[class=\"nav-text-" + ref + "\"]").addClass("active");
-		},
-
-		
-		afterRender:function() {
-			var pagination = "<ul class=\"main-nav-ul\">";
-			var activeClass = "";
-			$(".scrollSection").each(function(i) {
-				activeClass = "";
-				if(i===$.scrollify.currentIndex()) {
-					activeClass = "active";
-				}
-				pagination += "<li><a class=\"scroll-top" + activeClass + "\" href=\"#" + $(this).attr("data-section-name") + "\"><span class=\"hover-text\">" + $(this).attr("data-section-name").charAt(0).toUpperCase() + $(this).attr("data-section-name").slice(1) + "</span></a></li>";
-			});
-
-			pagination += "</ul>";
-
-			$(".home").append(pagination);
-			$(".pagination a").on("click",$.scrollify.move);
-		}*/
-	})
+	});
 </script>
+
+<!--section 단위 스크롤 바닐라 js script>
+	var mHtml = $("html");
+	var page = 1;
+	mHtml.animate({scrollTop : 0},10);
+	$(window).on("wheel", function(e) {
+    if(mHtml.is(":animated")) return;
+    if(e.originalEvent.deltaY > 0) {
+        if(page == 4) return;
+        page++;
+    } else if(e.originalEvent.deltaY < 0) {
+        if(page == 1) return;
+        page--;
+    }
+    var posTop =(page-1) * $(window).height();
+    mHtml.animate({scrollTop : posTop});
+})
+</script-->
 
 <script>
-	/*pagination (vanila JS)*/
-	/* href를 null로 받아오는 오류로 미사용
-
-	const sections = document.querySelectorAll(".section");
-	const navs = document.querySelectorAll(".nav-text");
-
-	var global_href = "";
-	var global_current = "";
-	window.addEventListener("scroll",()=>{
-		//현재 영역의 id값
-		let current=""
-		sections.forEach(section=>{
-			//각 section의 top 위치(절대적 위치)
-			const sectionTop = window.scrollY + section.getBoundingClientRect().top;
-
-			//누적된 스크롤이 section의 top위치에 도달했거나 section의 안에 위치할 경우
-			if(window.scrollY >= sectionTop) {
-				current = section.getAttribute("id");
-			}
-
-			navs.forEach(nav=>{
-				nav.classList.remove("active");
-				//여기까진 문제가 없지만, scrollify 영향인지 href를 null로 가져온다.
-				const href = nav.getAttribute("href").substring(1);
-				if(href===current) {
-					//현재 있는 영역의 id와 메뉴의 링크주소가 일치할때
-					nav.classList.add("active");
-				}
-				global_href = "";
-				global_current = "";
-
-			})
-		})
-	})*/
+	/* 스크롤 부드럽게 */
+	/*$('scoll-a1').click(function () {
+	  $('html, body').animate({
+		scrollTop: $($.attr(this, 'href')).offset().top
+	  }, 500);
+	  return false;
+	});*/
 </script>
+
 
 </html>

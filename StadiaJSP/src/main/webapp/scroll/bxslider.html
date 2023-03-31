@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Stadia's Home</title>
+	<link rel="stylesheet" href="/scroll/css/motion.css">
+	<link rel="stylesheet" href="/js/bxslider-4-4.2.12/src/css/jquery.bxslider.css">
+	<link rel= "stylesheet" href="/scroll/css/style_bxslider.css" type="text/css">
+</head>
+<body class="none-scrollbar">
+	<section class="section section1 scrollSection" data-section-name="section1">
+		
+		<!-- Nav: scrollify에 사용할 경우 section1에 넣음(examples 참조) -->
+		<div class="main-nav">
+			<ul class="main-nav-ul">
+				<li>
+					<a class='scroll-top'href="#section1">
+						<span class="nav-dot-section1 active-dot"></span>
+					</a>
+					<div class="nav-text nav-text-section1 active-text">Section 1</div>
+				</li>
+				<li>
+					<a class='scroll-2nd' href="#section2">
+						<span class="nav-dot-section2"></span>
+					</a>
+					<div class="nav-text nav-text-section2">Section 2</div>
+				</li>
+				<li>
+					<a class='scroll-3rd' href="#section3">
+						<span class="nav-dot-section3"></span>
+					</a>
+					<div class="nav-text nav-text-section3">Section 3</div>
+				</li>
+			</ul>
+		</div>
+		<div class="slider01">
+			<div class="slider-type1">
+				<div><img src="https://www.duolac.co.kr/img/dp/main/PHS_20220401090404_-1539114257.jpg" alt="듀오락 이미지 1"></div>
+				<div><img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1470709783.jpg" alt="듀오락 이미지 1"></div>
+				<div><img src="https://www.duolac.co.kr/img/dp/main/PHS_20220414112920_1795854617.jpg" alt="듀오락 이미지 1"></div>
+				<div><img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1596907423.jpg" alt="듀오락 이미지 1"></div>
+			</div>
+		</div>
+
+	</section>
+	<section class="section section2 scrollSection"  data-section-name="section2">
+		<div class="center-align business01_01">
+			<ul class="business01_slide">
+				<li>
+					<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220401090404_-1539114257.jpg" alt="듀오락 이미지 1">
+				</li>
+				<li>
+					<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1470709783.jpg" alt="듀오락 이미지 1">
+				</li>
+				<li>
+					<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220414112920_1795854617.jpg" alt="듀오락 이미지 1">
+				</li>
+				<li>
+					<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1596907423.jpg" alt="듀오락 이미지 1">
+				</li>
+				<li>
+					<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164543_2077843548.jpg" alt="듀오락 이미지 1">
+				</li>
+			</ul>
+			<ul class="page">
+				<!--자동생성-->
+			</ul>
+		</div>
+	</section>
+	<section class="section section3 scrollSection"  data-section-name="section3">
+	</section>
+</body>
+<script src="/js/jquery-3.6.4.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.slider-type1').bxSlider({
+			auto: true,
+			autoHover: true,
+			pager: true,
+			slideWidth: 1300,
+		});
+	});
+</script>
+<script src="/js/gsap-public/minified/gsap.min.js"></script>
+<script src="/js/gsap-public/minified/ScrollTrigger.min.js"></script>
+
+<script>
+	/*자동슬라이드*/
+		let n = 0;
+		//페이지 넘버
+		let i;
+		for (i=1; i<=5; i++) { // 이미지 갯수만큼 반복
+			if (i==1) {
+				$(".page").append("<li class='select'></li>");
+			} else {
+			$(".page").append("<li></li>")
+			}
+		}
+		// 슬라이드시작
+		function auto() {
+			n++;
+			if (n >=5) {
+				n = 0;
+			}
+			$(".business01_slide").animate({"left":-n*100+"%"},700);
+			$(".page li").eq(n).addClass("select").siblings().removeClass(); // eq(n)
+		}
+			
+		var time = setInterval("auto()",3000);
+		
+		// 슬라이드 마우스오버시 멈춤
+		$(".business01_01").hover(
+			function(){
+				clearInterval(time);
+			},
+			function(){
+				time = setInterval("auto()",3000);
+			}
+		);
+		
+		$(".page li").click(function(){
+			n= $(this).index(); // $(this)에 index방식의 숫자를 n에 넣어야함
+			$(".business01_slide").animate({"left":-n*100+"%"},700);
+			$(this).addClass("select").siblings().removeClass();
+		});     
+</script>
+
+
+<script>
+	gsap.registerPlugin(ScrollTrigger);
+
+	gsap.from(".s1-title", {
+		delay: 0.4,
+		scrollTrigger: {
+			trigger: ".s1-title", toggleActions: "restart none restart none"
+			/*onEnter, onLeave, onEnterBack, onLeaveBack*/
+		},
+		duration: 0.8, opacity: 0, y: 60,
+	});
+	gsap.from(".s2-title", {
+		delay: 0.2,
+		scrollTrigger: {
+			trigger: ".s2-title", toggleActions: "restart reverse restart reverse",
+		},
+		duration: 0.8, opacity: 0, y: 60,
+	});
+</script>
+
+<script src="/js/jquery.scrollify.js"></script>
+<script src="/js/bxslider-4-4.2.12/src/js/jquery.bxslider.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$.scrollify({
+			section : ".scrollSection",
+			scrollbars: true,
+			overflowScroll: true,
+			setHeights: false,
+			touchScroll: false,
+			//interstitialSection:".header, .footer",
+			before:function(i, sections) {
+				var ref = sections[i].attr("data-section-name");
+
+				$(".main-nav .active-text").removeClass("active-text");
+				$(".main-nav .active-dot").removeClass("active-dot");
+				$(".main-nav").find("div[class=\"nav-text nav-text-" + ref + "\"]").addClass("active-text");
+				$(".main-nav").find("span[class=\"nav-dot-" + ref + "\"]").addClass("active-dot");
+				/*
+				if ( ref == "section3") {
+					$(".nav-text").css('color', 'rgb(255, 119, 40)');
+				} else {
+					$(".nav-text").css('color', 'white');
+				}
+				*/
+			},
+		});
+		$(".scroll-down").click(function(e) {
+			e.preventDefault();
+			$.scrollify.next();
+		});
+
+		// 원래는 id가 아닌 인덱스 번호("#1") / data-section-name=""로 변경함
+		$(".scroll-top").click(function(e) {
+			e.preventDefault();
+			$.scrollify.move("#section1");
+		});
+		$(".scroll-2nd").click(function(e) {
+			e.preventDefault();
+			$.scrollify.move("#section2");
+		});
+		$(".scroll-3rd").click(function(e) {
+			e.preventDefault();
+			$.scrollify.move("#section3");
+		});
+	})
+</script>
+
+</html>

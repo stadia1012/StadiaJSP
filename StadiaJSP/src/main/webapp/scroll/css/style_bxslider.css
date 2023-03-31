@@ -1,0 +1,282 @@
+@charset "UTF-8";
+
+/*font*/
+@font-face {
+    font-family: 'dl';
+    /*src: url('/fonts/DuolacL_W.eot');*/
+    src: url('/fonts/DuolacL_W.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dm';
+    /*src: url('/fonts/DuolacM_W.eot');*/
+    src: url('/fonts/DuolacM_W.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, section, div, p, h1, h2, h3, h4, video { padding: 0; margin: 0;}
+body {margin: 0 !important;}
+
+.z1 {
+    z-index: 1;
+}
+.z2 {
+    z-index: 2;
+}
+.z5 {
+    z-index: 5;
+}
+.z-50 {
+    z-index: -50;
+}
+.center-align {
+    text-align: center;
+}
+
+/*스크롤바 숨기기*/
+.none-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.none-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.contents { position: absolute; }
+
+.scroll-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 33px;
+    width: 38px;
+    height: 32px;
+    margin-left: -21px;
+    z-index: 1;
+}
+
+/*main nav S*/
+.main-nav {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    right: 40px;
+    opacity: 1;
+    transform: translate(0, -50%);
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.main-nav ul li {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 23px 0 0 0;
+    position: relative;
+}
+.main-nav ul li a {
+    display: block;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+.main-nav ul li a span {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    border-color: rgb(255, 119, 40);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    width: 9px;
+    height: 9px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+}
+.main-nav ul li .active span {
+    /*background-color: rgb(255, 119, 40);*/
+}
+.main-nav ul li div {
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    overflow: hidden;
+    width: auto;
+    max-width: 100px;
+    position: absolute;
+    white-space: nowrap;
+    right: 26px;
+    top: -10px;
+    -webkit-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,0.23);
+}
+.main-nav ul li .active-text {
+    opacity: 1;
+}
+.main-nav ul li .active-dot {
+    background-color: rgb(255, 119, 40);
+}
+
+.main-nav ul li:nth-child(1) a:hover + div {
+    opacity: 1;
+}
+.main-nav ul li:nth-child(1) a:hover > span {
+    background-color: rgb(255, 119, 40);
+}
+.main-nav ul li:nth-child(2) a:hover + div {
+    opacity: 1;
+}
+.main-nav ul li:nth-child(2) a:hover > span {
+    background-color: rgb(255, 119, 40);
+}
+.main-nav ul li:nth-child(3) a:hover + div {
+    opacity: 1;
+}
+.main-nav ul li:nth-child(3) a:hover > span {
+    background-color: rgb(255, 119, 40);
+}
+/*main nav E*/
+
+
+.section { height: 100vh !important; position: relative }
+.section1 { background-color: rgb(158, 192, 255)}
+.section2 { background-color: rgb(255, 176, 176)}
+.section3 { background-color: rgb(180, 204, 136); position: relative;}
+
+
+
+/*bxslider*/
+.slider01 .bx-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 10vh;
+    border: 0;
+}
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    /*paging 위치*/
+    bottom: 16px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: rgba(0 0 0 0); /*pager 투명*/
+}
+.bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+    background: #fff; /*active white*/
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover {
+    background: rgba(0 0 0 0);  /*hover 투명*/
+}
+
+
+/* 커스텀 slide*/
+.business01_01 {
+    position: relative;
+    overflow: hidden;
+}
+.business01_slide {
+    position: relative;
+    display: flex;
+    left: 0;
+    width: 500%;
+}
+.business01_slide li {
+    width: calc(100% / 5);
+}
+.business01_slide li img {
+    width: 100%;
+}
+.business01_01 .page {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    margin-left: -50px;
+}
+.business01_01 .page li {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.business01_01 .page li.select {
+    background-color: #fff;
+}
+
+.section .business01_ul {
+    width: 100%;
+    height: 755px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background: url(../images/content/business/business01_bg.jpg) no-repeat center;
+}
+.section .business01_ul > li {
+    width: 45%;
+    background-color: white;
+    margin: 25px 0;
+    padding: 22px;
+    box-sizing: border-box;
+}
+.section .business01_ul > li h3 {
+    font-size: 22px;
+    color:#164e88;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 16px;
+}
+.section .business01_ul > li table {
+    font-size: 18px;
+    color:black;
+    line-height: 1.8;
+    text-align: left;
+    font-weight: 600;
+}
+.section .business01_ul > li table th,
+.section .business01_ul > li table td {
+    padding: 0;
+    vertical-align: top;
+}
+
+.section div[class^="business01_cont0"] {
+    position: relative;
+    padding-left: 420px;
+    height: 340px;
+    padding-top: 50px;
+}
+.section div[class^="business01_cont0"] img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.section div[class^="business01_cont0"] h3 {
+    font-size: 24px;
+    color: #000;
+    font-weight: 600;
+    text-align: left;
+}
+.section div[class^="business01_cont0"] p {
+    font-size: 16px;
+    text-align: left;
+}
+.section div[class^="business01_cont0"] i {
+    font-style: normal;
+    font-size: 14px;
+    color:#222;
+    display: block;
+    text-align: left;
+}
+.section .img_box {
+    padding: 50px 0;
+    display: flex;
+    text-align: right;
+    justify-content: space-between;
+}
+.section .img_box li {
+    padding-bottom: 50px;
+}
