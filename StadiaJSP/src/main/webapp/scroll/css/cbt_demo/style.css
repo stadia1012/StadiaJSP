@@ -820,10 +820,10 @@ p.tit {font-family:'dm'}
 	.full3 .bgupline{padding-bottom:50px !important;}
 	.full3 h2,
 	.full1 h2{padding-bottom:25px; margin-bottom:25px; background:url('../images/common/bg_contentTit.gif') no-repeat center bottom;}
-	.leader1 {padding-left:245px; background:url('/scroll/img/demo/bg_leader1.jpg') no-repeat 140px center; }
-	.leader2 {padding-left:195px; background:url('/scroll/img/demo/bg_leader2.jpg') no-repeat 90px center; }
-	.leader3 {padding-left:245px; background:url('/scroll/img/demo/bg_leader3.jpg') no-repeat 140px center; }
-	.leader4 {padding-left:195px; background:url('/scroll/img/demo/bg_leader4.jpg') no-repeat 90px center; }
+	.leader1 {padding-left:245px; background:url('../../img/demo/bg_leader1.jpg') no-repeat 140px center; }
+	.leader2 {padding-left:195px; background:url('../../img/demo/bg_leader2.jpg') no-repeat 90px center; }
+	.leader3 {padding-left:245px; background:url('../../img/demo/bg_leader3.jpg') no-repeat 140px center; }
+	.leader4 {padding-left:195px; background:url('../../img/demo/bg_leader4.jpg') no-repeat 90px center; }
 	.full1 + .bglineH .row .col:nth-child(3){clear:both;}
 	.leader dt{font-size:20px; color:#000;}
 	.leader dt span {font-size:16px;}
@@ -1834,10 +1834,10 @@ p.tit {font-family:'dm'}
 	.full2 {padding-top:55px;background:url('../images/content/about/bg_full1.jpg') no-repeat center top; height:518px; }
 	.full3 {padding-top:80px;background:url('../images/content/about/bg_full2.jpg') no-repeat center top; }
 	.full3 .bgupline{padding-bottom:50px !important;}
-	.leader1 {padding-left:45%;padding-right:10px;background:url('/scroll/img/demo/bg_leader1.jpg') no-repeat 70px center; }
-	.leader2 {padding-left:35%;padding-right:10%;background:url('/scroll/img/demo/bg_leader2.jpg') no-repeat 40px center; }
-	.leader3 {padding-left:45%;padding-right:10px;background:url('/scroll/img/demo/bg_leader3.jpg') no-repeat 70px center; }
-	.leader4 {padding-left:35%;padding-right:10%;background:url('/scroll/img/demo/bg_leader4.jpg') no-repeat 40px center; }
+	.leader1 {padding-left:45%;padding-right:10px;background:url('../../img/demo/bg_leader1.jpg') no-repeat 70px center; }
+	.leader2 {padding-left:35%;padding-right:10%;background:url('../../img/demo/bg_leader2.jpg') no-repeat 40px center; }
+	.leader3 {padding-left:45%;padding-right:10px;background:url('../../img/demo/bg_leader3.jpg') no-repeat 70px center; }
+	.leader4 {padding-left:35%;padding-right:10%;background:url('../../img/demo/bg_leader4.jpg') no-repeat 40px center; }
 	.leader dt{font-size:20px; color:#000;}
 	.leader dt span {font-size:16px;}
 	.leader dd {font-size:14px; color:#666;}
@@ -2641,10 +2641,10 @@ p.tit {font-family:'dm'}
 	.full2 {padding-top:55px;background:url('../images/content/about/bg_full1.jpg') no-repeat center top; height:518px; }
 	.full3 {padding-top:80px;background:url('../images/content/about/bg_full2.jpg') no-repeat center top;}
 	.full3 .bgupline{padding-bottom:30px !important;}
-	.leader1 {padding-left:31%; background:url('/scroll/img/demo/bg_leader1.jpg') no-repeat 10% center; }
-	.leader2 {padding-left:30%;padding-right:5%; background:url('/scroll/img/demo/bg_leader2.jpg') no-repeat 10% center; }
-	.leader3 {padding-left:30%; background:url('/scroll/img/demo/bg_leader3.jpg') no-repeat 10% center; }
-	.leader4 {padding-left:30%;padding-right:5%; background:url('/scroll/img/demo/about/bg_leader4.jpg') no-repeat 10% center; }
+	.leader1 {padding-left:31%; background:url('../../img/demo/bg_leader1.jpg') no-repeat 10% center; }
+	.leader2 {padding-left:30%;padding-right:5%; background:url('../../img/demo/bg_leader2.jpg') no-repeat 10% center; }
+	.leader3 {padding-left:30%; background:url('../../img/demo/bg_leader3.jpg') no-repeat 10% center; }
+	.leader4 {padding-left:30%;padding-right:5%; background:url('../../img/demo/about/bg_leader4.jpg') no-repeat 10% center; }
 	.leader dt{font-size:20px; color:#000;}
 	.leader dt span {font-size:16px;}
 	.leader dd {font-size:14px; color:#666;}
@@ -3459,10 +3459,10 @@ p.tit {font-family:'dm'}
 	.full2 img {width:100%;}
 	.full3 {padding-top:80px;background:url('../images/content/about/bg_full2.jpg') no-repeat center top; background-size:100% auto; }
 	.full3 .bgupline{padding-bottom:15px !important;}
-	.leader1 {padding-left:40%;padding-right:8%; background:url('/scroll/img/demo/bg_leader1.jpg') no-repeat 15% center; }
-	.leader2 {padding-left:40%;padding-right:8%; background:url('/scroll/img/demo/bg_leader2.jpg') no-repeat 15% center; }
-	.leader3 {padding-left:40%;padding-right:8%; background:url('/scroll/img/demo/bg_leader3.jpg') no-repeat 15% center; }
-	.leader4 {padding-left:40%;padding-right:8%; background:url('/scroll/img/demo/bg_leader4.jpg') no-repeat 15% center; }
+	.leader1 {padding-left:40%;padding-right:8%; background:url('../../img/demo/bg_leader1.jpg') no-repeat 15% center; }
+	.leader2 {padding-left:40%;padding-right:8%; background:url('../../img/demo/bg_leader2.jpg') no-repeat 15% center; }
+	.leader3 {padding-left:40%;padding-right:8%; background:url('../../img/demo/bg_leader3.jpg') no-repeat 15% center; }
+	.leader4 {padding-left:40%;padding-right:8%; background:url('../../img/demo/bg_leader4.jpg') no-repeat 15% center; }
 	#list2 img, #all img {width:auto;max-width:300px;}
 	#list2 li img, #all li img {width:100%;}
 	.leader dt{font-size:20px; color:#000;}

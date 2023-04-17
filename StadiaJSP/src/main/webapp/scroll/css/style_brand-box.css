@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+/*font*/
+@font-face {
+    font-family: 'dl';
+    /*src: url('../../fonts/DuolacL_W.eot');*/
+    src: url('../../fonts/DuolacL_W.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dm';
+    /*src: url('/fonts/DuolacM_W.eot');*/
+    src: url('../../fonts/DuolacM_W.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, section, div, p, h1, h2, h3, h4, video, ul { padding: 0; margin: 0;}
+body { margin: 0 !important; }
+div { font-size: 0px; }
+li { list-style: none; }
+.z1 {
+    z-index: 1;
+}
+.z2 {
+    z-index: 2;
+}
+.z5 {
+    z-index: 5;
+}
+.z-50 {
+    z-index: -50;
+}
+.center-align {
+    text-align: center;
+}
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/*스크롤바 숨기기*/
+.none-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.none-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.contents { position: absolute; }
+
+.scroll-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 33px;
+    width: 38px;
+    height: 32px;
+    margin-left: -21px;
+    z-index: 1;
+}
+
+/*main nav S*/
+.main-nav {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    right: 40px;
+    opacity: 1;
+    transform: translate(0, -50%);
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.main-nav ul li {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 23px 0 0 0;
+    position: relative;
+}
+.main-nav ul li a {
+    display: block;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+.main-nav ul li a span {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    border-color: rgb(255, 119, 40);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    width: 9px;
+    height: 9px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+}
+.main-nav ul li .active span {
+    /*background-color: rgb(255, 119, 40);*/
+}
+.main-nav ul li div {
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    overflow: hidden;
+    width: auto;
+    max-width: 100px;
+    position: absolute;
+    white-space: nowrap;
+    right: 26px;
+    top: -10px;
+    -webkit-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,0.23);
+}
+.main-nav ul li .active-text {
+    opacity: 1;
+}
+.main-nav ul li .active-dot {
+    background-color: rgb(255, 119, 40);
+}
+
+.main-nav ul li:nth-child(1) a:hover + div {
+    opacity: 1;
+}
+.main-nav ul li:nth-child(1) a:hover > span {
+    background-color: rgb(255, 119, 40);
+}
+.main-nav ul li:nth-child(2) a:hover + div {
+    opacity: 1;
+}
+.main-nav ul li:nth-child(2) a:hover > span {
+    background-color: rgb(255, 119, 40);
+}
+.main-nav ul li:nth-child(3) a:hover + div {
+    opacity: 1;
+}
+.main-nav ul li:nth-child(3) a:hover > span {
+    background-color: rgb(255, 119, 40);
+}
+/*main nav E*/
+
+
+.section { height: 100vh !important; position: relative }
+.section1 {
+    background: url(../img/dna-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.section2 { background-color: rgb(255, 176, 176)}
+.section3 { background-color: rgb(180, 204, 136); position: relative;}
+
+.section-title {
+    font-family: dl;
+    font-size: 24px;
+    color: grey;
+    padding: 20px 0 20px 0;
+}
+.container {
+    position: relative;
+    z-index: 3;
+}
+
+/*brand-box start*/
+.flex-brand {
+    display: flex;
+    max-width: 1500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.brand-item {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+    max-width: 350px;
+    max-height: 530px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 1050px) {
+    .brand-item {
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .flex-brand {
+        display: block!important;
+    }
+}
+.brand-item img {
+    width: 100%; /*아이템에 채우기*/
+}
+.title-box {
+    font-family: 'dl';
+    padding: 90px 0 35px 0;
+}
+.title-box .title {
+    font-size: 43px;
+    color: white;
+    text-shadow: 0px 0px 8px rgba(0,0,0,0.5);
+}
+
+.bg-overlay {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter:  grayscale(0.7) blur(5px);
+}

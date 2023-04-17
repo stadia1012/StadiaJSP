@@ -16,9 +16,9 @@
     font-style: normal;
 }
 
-html, body, section, div, p, h1, h2, h3, h4, video { padding: 0; margin: 0;}
+html, body, section, div, p, h1, h2, h3, h4, video, ul { padding: 0; margin: 0;}
 body {margin: 0 !important;}
-
+li { list-style: none; }
 .z1 {
     z-index: 1;
 }
@@ -33,6 +33,11 @@ body {margin: 0 !important;}
 }
 .center-align {
     text-align: center;
+}
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
 }
 
 /*스크롤바 숨기기*/
@@ -147,9 +152,23 @@ body {margin: 0 !important;}
 .section2 { background-color: rgb(255, 176, 176)}
 .section3 { background-color: rgb(180, 204, 136); position: relative;}
 
+.section-title {
+    font-family: dl;
+    font-size: 24px;
+    color: grey;
+    padding: 20px 0 20px 0;
+}
 
 
-/*bxslider*/
+/*bxslider 수정*/
+.slider01, slider02 {
+    position: relative;
+    width: 100%;
+    max-width: 45vw;
+    height: 50vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
 .slider01 .bx-wrapper {
     position: absolute;
     left: 50%;
@@ -157,23 +176,34 @@ body {margin: 0 !important;}
     top: 10vh;
     border: 0;
 }
-.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+.slider01 .bx-wrapper .bx-pager, .slider01 .bx-wrapper .bx-controls-auto {
     /*paging 위치*/
     bottom: 16px;
 }
 
-.bx-wrapper .bx-pager.bx-default-pager a {
-    background: rgba(0 0 0 0); /*pager 투명*/
+.slider01 .bx-wrapper .bx-pager.bx-default-pager a {
+    background: rgba(0, 0, 0, 0); /*pager 투명*/
+    border: 1px solid #666; /*원 테두리*/
 }
-.bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+.slider01 .bx-wrapper .bx-pager.bx-default-pager a:hover, .slider01 .bx-wrapper .bx-pager.bx-default-pager a.active, .slider01 .bx-wrapper .bx-pager.bx-default-pager a:focus {
     background: #fff; /*active white*/
 }
-.bx-wrapper .bx-pager.bx-default-pager a:hover {
-    background: rgba(0 0 0 0);  /*hover 투명*/
+.slider01 .bx-wrapper .bx-pager.bx-default-pager a:hover {
+    background: rgba(0, 0, 0, 0);  /*hover 색 변경 없음*/
 }
 
 
-/* 커스텀 slide*/
+/*** 오리지널 ***/
+.slider02 .bx-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 6vh;
+    border: 0;
+}
+
+/*** 커스텀 slide ***/
+
 .business01_01 {
     position: relative;
     overflow: hidden;
@@ -203,6 +233,7 @@ body {margin: 0 !important;}
     border: 1px solid #fff;
     border-radius: 100%;
     margin-right: 10px;
+    list-style: none;
 }
 .business01_01 .page li.select {
     background-color: #fff;

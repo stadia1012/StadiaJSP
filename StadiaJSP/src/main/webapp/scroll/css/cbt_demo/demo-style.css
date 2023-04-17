@@ -93,7 +93,7 @@
 @media only screen and (min-width: 1050px){
     .leader1 {
         padding-left: 245px;
-        background: url(/scroll/img/demo/bg_leader1.jpg) no-repeat 140px center;
+        background: url(../../img/demo/bg_leader1.jpg) no-repeat 140px center;
     }
 }
 @media only screen and (min-width: 1050px){
@@ -114,19 +114,19 @@
 @media only screen and (min-width: 1050px) {
     .leader2 {
         padding-left: 195px;
-        background: url(/scroll/img/demo/bg_leader2.jpg) no-repeat 90px center;
+        background: url(../../img/demo/bg_leader2.jpg) no-repeat 90px center;
     }
 }
 @media only screen and (min-width: 1050px) {
     .leader3 {
         padding-left: 245px;
-        background: url(/scroll/img/demo/bg_leader3.jpg) no-repeat 140px center;
+        background: url(../../img/demo/bg_leader3.jpg) no-repeat 140px center;
     }
 }
 @media only screen and (min-width: 1050px) {
     .leader4 {
         padding-left: 195px;
-        background: url(/scroll/img/demo/bg_leader4.jpg) no-repeat 90px center;
+        background: url(../../img/demo/bg_leader4.jpg) no-repeat 90px center;
     }
 }
 @media only screen and (min-width: 1050px) {

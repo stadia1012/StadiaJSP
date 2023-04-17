@@ -3,15 +3,15 @@
 /*font*/
 @font-face {
     font-family: 'dl';
-    /*src: url('/fonts/DuolacL_W.eot');*/
-    src: url('/fonts/DuolacL_W.woff') format('woff');
+    /*src: url('../../fonts/DuolacL_W.eot');*/
+    src: url('../../fonts/DuolacL_W.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'dm';
-    /*src: url('/fonts/DuolacM_W.eot');*/
-    src: url('/fonts/DuolacM_W.woff') format('woff');
+    /*src: url('../../fonts/DuolacM_W.eot');*/
+    src: url('../../fonts/DuolacM_W.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

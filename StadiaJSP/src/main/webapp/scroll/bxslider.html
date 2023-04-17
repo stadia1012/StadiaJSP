@@ -42,30 +42,41 @@
 				<div><img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1596907423.jpg" alt="듀오락 이미지 1"></div>
 			</div>
 		</div>
+		<div class="slider02">
+			<div class="slider-type1">
+				<div><img src="https://www.duolac.co.kr/img/dp/main/PHS_20220401090404_-1539114257.jpg" alt="듀오락 이미지 1"></div>
+				<div><img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1470709783.jpg" alt="듀오락 이미지 1"></div>
+				<div><img src="https://www.duolac.co.kr/img/dp/main/PHS_20220414112920_1795854617.jpg" alt="듀오락 이미지 1"></div>
+				<div><img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1596907423.jpg" alt="듀오락 이미지 1"></div>
+			</div>
+		</div>
 
 	</section>
 	<section class="section section2 scrollSection"  data-section-name="section2">
-		<div class="center-align business01_01">
-			<ul class="business01_slide">
-				<li>
-					<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220401090404_-1539114257.jpg" alt="듀오락 이미지 1">
-				</li>
-				<li>
-					<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1470709783.jpg" alt="듀오락 이미지 1">
-				</li>
-				<li>
-					<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220414112920_1795854617.jpg" alt="듀오락 이미지 1">
-				</li>
-				<li>
-					<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1596907423.jpg" alt="듀오락 이미지 1">
-				</li>
-				<li>
-					<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164543_2077843548.jpg" alt="듀오락 이미지 1">
-				</li>
-			</ul>
-			<ul class="page">
-				<!--자동생성-->
-			</ul>
+		<div class="container center-align">
+			<p class="section-title">쎌바이오텍 커스텀 슬라이드</p>
+			<div class="business01_01">
+				<ul class="business01_slide">
+					<li>
+						<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220401090404_-1539114257.jpg" alt="듀오락 이미지 1">
+					</li>
+					<li>
+						<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1470709783.jpg" alt="듀오락 이미지 1">
+					</li>
+					<li>
+						<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220414112920_1795854617.jpg" alt="듀오락 이미지 1">
+					</li>
+					<li>
+						<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164542_1596907423.jpg" alt="듀오락 이미지 1">
+					</li>
+					<li>
+						<img src="https://www.duolac.co.kr/img/dp/main/PHS_20220331164543_2077843548.jpg" alt="듀오락 이미지 1">
+					</li>
+				</ul>
+				<ul class="page">
+					<!--자동생성-->
+				</ul>
+			</div>
 		</div>
 	</section>
 	<section class="section section3 scrollSection"  data-section-name="section3">
@@ -107,15 +118,24 @@
 			$(".page li").eq(n).addClass("select").siblings().removeClass(); // eq(n)
 		}
 			
-		var time = setInterval("auto()",3000);
+		var time = setInterval(auto, 3000);
 		
 		// 슬라이드 마우스오버시 멈춤
 		$(".business01_01").hover(
-			function(){
+			function() {
 				clearInterval(time);
 			},
-			function(){
-				time = setInterval("auto()",3000);
+			function() {
+				time = setInterval(auto, 3000);
+			}
+			);
+
+			$(".page li").hover(
+			function() {
+				clearInterval(time);
+			},
+			function() {
+				time = setInterval(auto, 3000);
 			}
 		);
 		
